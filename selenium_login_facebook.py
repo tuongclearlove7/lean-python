@@ -3,9 +3,9 @@ from selenium import webdriver
 tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
 tuong.set_window_size(1000,1000)
 tuong.get("https://www.facebook.com/login")
-tuong.find_element_by_id("email").send_keys("tranthimai1331998@gmail.com")
+tuong.find_element_by_id("email").send_keys("")
 sleep(2)
-tuong.find_element_by_id("pass").send_keys("tuongyeuthao")
+tuong.find_element_by_id("pass").send_keys("")
 sleep(2)
 tuong.find_element_by_name("login").click()
 
