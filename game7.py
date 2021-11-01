@@ -24,7 +24,7 @@ font = pygame.font.SysFont('javanesetext', 30)
 character_image = pygame.image.load("dude.gif")
 character_image = pygame.transform.scale(character_image,(size_character_1, size_character_2))
 
-def rocket(x, y): # tạo hàm rocket để thêm nhân vật vào game 
+def character(x, y): # tạo hàm character để thêm nhân vật vào game 
     screen.blit(character_image, (x, y)) # được truyền vào biến x, y
 
 tuong = True
@@ -88,11 +88,10 @@ while tuong: # vòng lặp
 
 
 
-    rocket(character_1, character_2)# cho nhân vật vô game
+    character(character_1, character_2)# cho nhân vật vô game
     fpsClock.tick(FPS)
     pygame.display.update()
 
-    # đang trong vòng lặp
-
+    # đang trong vòng lặp 
 
     
