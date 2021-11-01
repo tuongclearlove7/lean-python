@@ -12,8 +12,11 @@ player_1 = 0 # vị trí character
 player_2 = 0
 size_character_1 = 100
 size_character_2 = 100
+FPS = 400
+
 
 screen = pygame.display.set_mode((Width, Height))
+fpsClock  = pygame.time.Clock()
 pygame.display.set_caption("game")
 icon = pygame.image.load("rocket.png")
 background = pygame.image.load("11.jpg")
@@ -38,38 +41,34 @@ while tuong: # vòng lặp
             tuong = False
 
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
-                player_2 = -0.5
-                print("up")
-            if event.key == pygame.K_DOWN:
-                player_2 = 0.5
-                print("down")
             if event.key == pygame.K_LEFT:
                 player_1 = -0.5
                 print('left')
-                # tốc độ đi sang trái của nhân vật
+                # tốc độ bắt đầu đi sang trái của nhân vật
             if event.key == pygame.K_RIGHT:
                 player_1 = 0.5
                 print("right")
-                # tốc độ đi sang phải của nhân vật
+                # tốc độ bắt đầu đi sang phải của nhân vật
+            if event.key == pygame.K_UP:
+                player_2 = -0.5
+                print("up")
+            # tốc độ bắt đầu đi lên của nhân vật
+            if event.key == pygame.K_DOWN:
+                player_2 = 0.5
+                print("down")
+            # tốc độ bắt đầu đi xuống của nhân vật
+            
 
         if event.type == pygame.KEYUP: # xác định vị trí muốn dừng của tên lửa
-            if event.key == pygame.K_DOWN:
-                player_2 = 0
-            if event.key == pygame.K_UP:
-                player_2 = 0
             if event.key == pygame.K_LEFT:
                 player_1 = 0
             if event.key == pygame.K_RIGHT:
                 player_1 = 0
-
-    character_2 += player_2
-    if character_2 <= -15:
-        character_2 = -15
-#vị trí lề trên game mà nhân vật đi tới và đứng lại
-    elif character_2 >= 415:
-        character_2 = 415
-#vị trí lề dưới game mà nhân vật đi tới và đứng lại
+            if event.key == pygame.K_DOWN:
+                player_2 = 0
+            if event.key == pygame.K_UP:
+                player_2 = 0
+            
 
     character_1 += player_1
     if character_1 <= -12:
@@ -79,9 +78,21 @@ while tuong: # vòng lặp
         character_1 = 840
 #vị trí lề phải game mà nhân vật đi tới và đứng lại
 
+    character_2 += player_2
+    if character_2 <= -15:
+        character_2 = -15
+#vị trí lề trên game mà nhân vật đi tới và đứng lại
+    elif character_2 >= 415:
+        character_2 = 415
+#vị trí lề dưới game mà nhân vật đi tới và đứng lại
+
+
+
     rocket(character_1, character_2)# cho nhân vật vô game
+    fpsClock.tick(FPS)
     pygame.display.update()
-    # đang trong vòng lặp 
+
+    # đang trong vòng lặp
 
 
     
