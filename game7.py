@@ -1,0 +1,87 @@
+import pygame
+pygame.init()
+
+text_color = (255,255,255)
+Width = 900
+Height = 500
+background_1 = 0
+background_2 = 0
+character_1 = 400
+character_2 = 200
+player_1 = 0 # vị trí character
+player_2 = 0
+size_character_1 = 100
+size_character_2 = 100
+
+screen = pygame.display.set_mode((Width, Height))
+pygame.display.set_caption("game")
+icon = pygame.image.load("rocket.png")
+background = pygame.image.load("11.jpg")
+font = pygame.font.SysFont('javanesetext', 30)
+character_image = pygame.image.load("dude.gif")
+character_image = pygame.transform.scale(character_image,(size_character_1, size_character_2))
+
+def rocket(x, y): # tạo hàm rocket để thêm nhân vật vào game 
+    screen.blit(character_image, (x, y)) # được truyền vào biến x, y
+
+tuong = True
+
+while tuong: # vòng lặp 
+    
+    screen.blit(background, (background_1,background_2))
+    text = font.render('Hello world',True , text_color)
+    pygame.display.set_icon(icon)
+    screen.blit(text,(390,-10))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            tuong = False
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                player_2 = -0.5
+                print("up")
+            if event.key == pygame.K_DOWN:
+                player_2 = 0.5
+                print("down")
+            if event.key == pygame.K_LEFT:
+                player_1 = -0.5
+                print('left')
+                # tốc độ đi sang trái của nhân vật
+            if event.key == pygame.K_RIGHT:
+                player_1 = 0.5
+                print("right")
+                # tốc độ đi sang phải của nhân vật
+
+        if event.type == pygame.KEYUP: # xác định vị trí muốn dừng của tên lửa
+            if event.key == pygame.K_DOWN:
+                player_2 = 0
+            if event.key == pygame.K_UP:
+                player_2 = 0
+            if event.key == pygame.K_LEFT:
+                player_1 = 0
+            if event.key == pygame.K_RIGHT:
+                player_1 = 0
+
+    character_2 += player_2
+    if character_2 <= -15:
+        character_2 = -15
+#vị trí lề trên game mà nhân vật đi tới và đứng lại
+    elif character_2 >= 415:
+        character_2 = 415
+#vị trí lề dưới game mà nhân vật đi tới và đứng lại
+
+    character_1 += player_1
+    if character_1 <= -12:
+        character_1 = -12
+#vị trí lề trái game mà nhân vật đi tới và đứng lại
+    elif character_1 >= 840:
+        character_1 = 840
+#vị trí lề phải game mà nhân vật đi tới và đứng lại
+
+    rocket(character_1, character_2)# cho nhân vật vô game
+    pygame.display.update()
+    # đang trong vòng lặp 
+
+
+    
