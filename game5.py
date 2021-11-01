@@ -1,8 +1,10 @@
 import pygame
 pygame.init()
 
-text_color = (255,255,255)
-Width = 1320
+text_color = (24,71,133)
+text2_color = (24,71,133)
+text3_color = (223,0,41)
+Width = 1330
 Height = 700
 background_1 = 0
 background_2 = 0
@@ -179,13 +181,16 @@ rocket2_change = 3 # tốc độ bắn lên của đạn
 rocket_state = True
 # nếu là True thì (hack game) auto bắn k cần nhấn space
 
+
 screen = pygame.display.set_mode((Width, Height))
-background_image = pygame.image.load("11.jpg")
+background_image = pygame.image.load("anh.png")
 pygame.display.set_caption("The universe")
 icon = pygame.image.load("launch.png")
-font = pygame.font.SysFont('javanesetext', 30)
+font = pygame.font.SysFont('javanesetext', 20)
+font2 = pygame.font.SysFont('javanesetext', 30)
+font3 = pygame.font.SysFont("javanesetext", 25)
 sound_game = pygame.mixer.Sound("vippro33.mp3")
-sound2_game = pygame.mixer.Sound("vippro36.mp3")
+sound2_game = pygame.mixer.Sound("vippro33.mp3")
 
 launchers_image = pygame.image.load("station space.png")
 ufo_image = pygame.image.load("ufo2.png")
@@ -514,9 +519,13 @@ while tuong: # vòng lặp
     pygame.mixer.Sound.play(sound2_game)
     
     screen.blit(background_image, (background_1,background_2))
-    text = font.render('Hello Universe',True , text_color)
+    text = font.render('km/h : '+str(plane_1*10),True,text_color)
+    text_2 = font2.render("Hello Universe", True, text2_color)
+    text_3 = font3.render("27°C", True, text3_color) 
     pygame.display.set_icon(icon)
-    screen.blit(text,(600,-10))
+    screen.blit(text,(1100,500))
+    screen.blit(text_2,(550,-10))
+    screen.blit(text_3,(20,-10))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -559,6 +568,7 @@ while tuong: # vòng lặp
     elif rocket_2 >= 850:
         rocket_2 = 850
     #vị trí lề trái game mà tên lửa bay tới và đứng lại
+    
 
     ufo_1 += 4 # tốc độ bay sang phải của ufo
     if ufo_1 + 0 > Width:# vị trí bắt đầu bay của ufo_1 bay sang phải
@@ -567,6 +577,7 @@ while tuong: # vòng lặp
     plane_1 += 4
     if plane_1 + 0 > Width:
             plane_1 = Height - 700
+    
     car_1 += 4
     if car_1 + 700 > Width:
             car_1 = Height - 700
@@ -692,5 +703,5 @@ while tuong: # vòng lặp
     traffic3(traffic3_1, traffic3_2)
 
     pygame.display.update()
-    print(" Universe is running ")
+
      # đang trong vòng lặp
