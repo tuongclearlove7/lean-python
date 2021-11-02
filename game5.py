@@ -701,6 +701,12 @@ while tuong: # vòng lặp
     traffic(traffic_1, traffic_2)
     traffic2(traffic2_1, traffic2_2)
     traffic3(traffic3_1, traffic3_2)
+    
+# nếu in ra fire_rocket(launch_1, rocket_2) ở cuối
+# thì tên lửa đè lên 2 backgrounnd và bắn liên tục lên
+# còn khi fire_rocket(launch_1, rocket_2) được in dưới
+# dòng 576 thì tên lửa bị 2 background đè lên nên k thấy 
+# khi đó nhấn space mới thấy tên lửa bắn
 
     pygame.display.update()
 
