@@ -558,11 +558,11 @@ while tuong: # vòng lặp
     pygame.mixer.Sound.play(sound2_game)
 
     screen.blit(background_image, (background_1,background_2))
-    text = font.render('km/m : '+str(plane_1*10),True,text_color)
+    text = font.render('km/h : '+str(plane_1*10),True,text_color)
     text_2 = font2.render("Hello Universe", True, text_color)
     text_3 = font3.render("27°C", True, text2_color)
-    text_4 = font4.render("7h00pm", True, text2_color)
-    text_5 = font5.render("max speed 13300km/4m", True, text_color)
+    text_4 = font4.render("7h00Am", True, text2_color)
+    text_5 = font5.render("max speed 133km/4m", True, text_color)
 
     pygame.display.set_icon(icon)
     screen.blit(text, (1100,500))
@@ -670,8 +670,8 @@ while tuong: # vòng lặp
     clock(clock_1,clock_2)
     thermometer(thermometer_1,thermometer_2)
     speedometer(speedometer_1,speedometer_2)
-    #background3(background_5,background_6)
-    #background2(background_3, background_4)
+    background3(background_5,background_6)
+    background2(background_3, background_4)
     launch(launch_1, launch_2)# cho tên lửa vô game
     ufo(ufo_1, ufo_2)
     flag(flag_1, flag_2)
