@@ -51,8 +51,8 @@ nui_1 = 450
 nui_2 = 430
 mountain_1 = 450
 mountain_2 = 495
-mountain2_1 = 450
-mountain2_2 = 300
+mountain2_1 = 360
+mountain2_2 = 350
 airport_1 = 325
 airport_2 = 573
 electric_1 = 290
@@ -121,12 +121,12 @@ tree5_1 = 800
 tree5_2 = 570
 tree6_1 = 800
 tree6_2 = 635
-tree7_1 = 630
-tree7_2 = 505
-tree8_1 = 720
-tree8_2 = 505
-tree9_1 = 800
-tree9_2 = 505
+tree7_1 = 640
+tree7_2 = 572
+tree8_1 = 750
+tree8_2 = 572
+tree9_1 = 750
+tree9_2 = 637
 tree10_1 = 400
 tree10_2 = 570
 people1_1 = 40
@@ -187,6 +187,19 @@ clock_1 = 1060
 clock_2 = 460
 clock_3 = 13
 clock_4 = 40
+
+sea_1 = 670
+sea_2 = 400
+sea2_1 = 790
+sea2_2 = 400
+sea3_1 = 600
+sea3_2 = 440
+sea4_1 = 700
+sea4_2 = 440
+sea5_1 = 800
+sea5_2 = 440
+sea6_1 = 550
+sea6_2 = 400
 
 rocket_1 = 0 # vị trí của đạn
 rocket_2 = 600
@@ -297,6 +310,12 @@ speedomater_image = pygame.image.load("speedometer.png")
 thermometer_image = pygame.image.load("hot.png")
 clock_image = pygame.image.load("clock2.png")
 clock_image2 = pygame.image.load("clock3.png")
+sea_image = pygame.image.load("sea.png")
+sea2_image = pygame.image.load("sea.png")
+sea3_image = pygame.image.load("sea.png")
+sea4_image = pygame.image.load("sea.png")
+sea5_image = pygame.image.load("sea.png")
+sea6_image = pygame.image.load("sea.png")
 
 rocket_image = pygame.image.load("rocket2.png")
 
@@ -549,6 +568,20 @@ def clock(x, y):
 def clock2(x, y):
     screen.blit(clock_image2, (x, y))
 
+def sea(x, y):
+    screen.blit(sea_image, (x, y))
+def sea2(x, y):
+    screen.blit(sea2_image, (x, y))
+def sea3(x, y):
+    screen.blit(sea3_image, (x, y))
+def sea4(x, y):
+    screen.blit(sea4_image, (x, y))
+def sea5(x, y):
+    screen.blit(sea5_image, (x, y))
+def sea6(x, y):
+    screen.blit(sea6_image, (x, y))
+
+
 tuong = True
 
 while tuong: # vòng lặp
@@ -666,8 +699,8 @@ while tuong: # vòng lặp
     clock(clock_1,clock_2)
     thermometer(thermometer_1,thermometer_2)
     speedometer(speedometer_1,speedometer_2)
-    background3(background_5,background_6)
-    background2(background_3, background_4)
+    #background3(background_5,background_6)
+    #background2(background_3, background_4)
     launch(launch_1, launch_2)# cho tên lửa vô game
     ufo(ufo_1, ufo_2)
     flag(flag_1, flag_2)
@@ -708,6 +741,14 @@ while tuong: # vòng lặp
     yellow(yellow_1, yellow_2)
     silver(silver_1, silver_2)
 
+    sea(sea_1,sea_2)
+    sea2(sea2_1, sea2_2)
+    sea3(sea3_1, sea3_2)
+    sea4(sea4_1, sea4_2)
+    sea5(sea5_1,sea5_2)
+    sea6(sea6_1, sea6_2)
+
+
     mountain2(mountain2_1, mountain2_2)
     tree7(tree7_1, tree7_2)
     nui(nui_1, nui_2)
@@ -720,14 +761,13 @@ while tuong: # vòng lặp
     wire2(wire2_1, wire2_2)
     elec(elec_1, elec_2)
     dien(dien_1, dien_2)
-    tree(tree_1, tree_2)
-    tree2(tree2_1, tree2_2)
-    tree3(tree3_1, tree3_2)
-    tree4(tree4_1, tree4_2)
-    tree5(tree5_1, tree5_2)
-    tree6(tree6_1, tree6_2)
+    
     tree8(tree8_1, tree8_2)
     tree9(tree9_1, tree9_2)
+    tree5(tree5_1, tree5_2)
+    tree6(tree6_1, tree6_2)
+    tree(tree_1, tree_2)
+    tree2(tree2_1, tree2_2)
 
     people1(people1_1, people1_2)
     people2(people2_1, people2_2)
@@ -757,6 +797,7 @@ while tuong: # vòng lặp
     traffic(traffic_1, traffic_2)
     traffic2(traffic2_1, traffic2_2)
     traffic3(traffic3_1, traffic3_2)
+    
 
 # nếu in ra fire_rocket(launch_1, rocket_2) ở cuối
 # thì tên lửa đè lên 2 backgrounnd và bắn liên tục lên
