@@ -179,6 +179,10 @@ traffic2_1 = 150
 traffic2_2 = 590
 traffic3_1 = 300
 traffic3_2 = 590
+speedometer_1 = 1060
+speedometer_2 = 500
+thermometer_1 = 10
+thermometer_2 = 0
 
 rocket_1 = 0 # vị trí của đạn
 rocket_2 = 600
@@ -283,6 +287,8 @@ vetinh2_image = pygame.image.load("vetinh2.png")
 traffic_image = pygame.image.load("light.png")
 traffic2_image = pygame.image.load("light.png")
 traffic3_image = pygame.image.load("light.png")
+speedomater_image = pygame.image.load("speedometer.png")
+thermometer_image = pygame.image.load("hot.png")
 
 
 rocket_image = pygame.image.load("rocket2.png")
@@ -526,6 +532,12 @@ def traffic2(x, y):
 def traffic3(x, y):
     screen.blit(traffic3_image, (x, y))
 
+def speedometer(x,y):
+    screen.blit(speedomater_image,(x,y))
+
+def thermometer(x, y):
+    screen.blit(thermometer_image,(x,y))
+
 
 tuong = True
 
@@ -539,7 +551,7 @@ while tuong: # vòng lặp
     pygame.display.set_icon(icon)
     screen.blit(text,(1100,500))
     screen.blit(text_2,(550,-10))
-    screen.blit(text_3,(20,-10))
+    screen.blit(text_3,(45,-10))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -635,9 +647,10 @@ while tuong: # vòng lặp
     if background_5 + 0 > Width:
             background_5 = Height - 700
 
-    
-    background3(background_5,background_6)
-    background2(background_3, background_4)
+    thermometer(thermometer_1,thermometer_2)
+    speedometer(speedometer_1,speedometer_2)
+    #background3(background_5,background_6)
+    #background2(background_3, background_4)
     launch(launch_1, launch_2)# cho tên lửa vô game
     ufo(ufo_1, ufo_2)
     flag(flag_1, flag_2)
@@ -727,6 +740,8 @@ while tuong: # vòng lặp
     traffic(traffic_1, traffic_2)
     traffic2(traffic2_1, traffic2_2)
     traffic3(traffic3_1, traffic3_2)
+
+
 
 # nếu in ra fire_rocket(launch_1, rocket_2) ở cuối
 # thì tên lửa đè lên 2 backgrounnd và bắn liên tục lên
