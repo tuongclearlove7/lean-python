@@ -170,9 +170,9 @@ satellite_2 = 630
 plane_1 = 50
 plane_2 = 320
 vetinh_1 = 1330
-vetinh_2 = 70
+vetinh_2 = 50
 vetinh2_1 = 1230
-vetinh2_2 = 70
+vetinh2_2 = 50
 traffic_1 = 0
 traffic_2 = 590
 traffic2_1 = 150
@@ -194,7 +194,6 @@ rocket1_change = 10 # tốc độ bắn ngang của đạn (nếu có)
 rocket2_change = 3 # tốc độ bắn lên của đạn
 rocket_state = True
 # nếu là True thì (hack game) auto bắn k cần nhấn space
-
 
 screen = pygame.display.set_mode((Width, Height))
 background_image = pygame.image.load("anh.png")
@@ -300,7 +299,6 @@ clock_image = pygame.image.load("clock2.png")
 clock_image2 = pygame.image.load("clock3.png")
 
 rocket_image = pygame.image.load("rocket2.png")
-
 
 def background2(x, y):
     screen.blit(background_image2, (x,y))
@@ -551,7 +549,6 @@ def clock(x, y):
 def clock2(x, y):
     screen.blit(clock_image2, (x, y))
 
-
 tuong = True
 
 while tuong: # vòng lặp
@@ -561,7 +558,7 @@ while tuong: # vòng lặp
     text = font.render('km/h : '+str(plane_1*10),True,text_color)
     text_2 = font2.render("Hello Universe", True, text_color)
     text_3 = font3.render("27°C", True, text2_color)
-    text_4 = font4.render("7h00Am", True, text2_color)
+    text_4 = font4.render("7:00Am", True, text2_color)
     text_5 = font5.render("max speed 133km/4m", True, text_color)
 
     pygame.display.set_icon(icon)
@@ -621,8 +618,7 @@ while tuong: # vòng lặp
     plane_1 += 4
     if plane_1 + 0 > Width:
             plane_1 = Height - 700
-    print(plane_1)
-    
+
     car_1 += 4
     if car_1 + 750 > Width:
             car_1 = Height - 700
@@ -652,10 +648,10 @@ while tuong: # vòng lặp
             cloud3_1 = Height - 1600
     
     
-    vetinh_1 -= 0.8
+    vetinh_1 -= 1
     if vetinh_1 + 0 > Width:
             vetinh_1 = Height - 300
-    vetinh2_1 -= 0.8
+    vetinh2_1 -= 1
     if vetinh2_1 + 0 > Width:
             vetinh2_1 = Height - 300
 
