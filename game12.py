@@ -1,8 +1,9 @@
 import pygame
 pygame.init()
 
-text_color = (24,71,133)
-text2_color = (223,0,41)
+text_blue = (24,71,133)
+text_red = (223,0,41)
+text_yellow = (241,175,0)
 
 Width = 1330
 Height = 700
@@ -15,29 +16,31 @@ background_5 = 2660
 background_6 = 0
 
 launch_1 = 1150
-launch_2 = 630
+launch_2 = 450
+station_1 = 1035
+station_2 = 450
 player_1 = 0 # vị trí tên lửa
 ufo_1 = 0
 ufo_2 = 0
-flag_1 = 1090
-flag_2 = 570
-flag_vietnam_1 = 225
+flag_1 = 1075
+flag_2 = 390
+flag_vietnam_1 = 165
 flag_vietnam_2 = 480
-home_1 = 100
+home_1 = 70
 home_2 = 500
 skyscraper_1 = 0
 skyscraper_2 = 400
 hospital_1 = 0
 hospital_2 = 500
-mausoleum_1 = 200
-mausoleum_2 = 500
+mausoleum_1 = 110
+mausoleum_2 = 630
 tower_1 = 0
 tower_2 = 640
 hotel_1 = 200
 hotel_2 = 635
-motel_1 = 200
-motel_2 = 400
-telecom_1 = 100
+motel_1 = 170
+motel_2 = 405
+telecom_1 = 70
 telecom_2 = 400
 car_1 = 0
 car_2 = 580
@@ -55,80 +58,64 @@ mountain2_1 = 360
 mountain2_2 = 350
 airport_1 = 325
 airport_2 = 573
-electric_1 = 290
+electric_1 = 350
 electric_2 = 500
-dien_1 = 370
+dien_1 = 440
 dien_2 = 500
-elec_1 = 445
+elec_1 = 510
 elec_2 = 500
-wire_1 = 410
+wire_1 = 355
 wire_2 = 483
+wire_size_1 = 190
+wire_size_2 = 64
 wire2_1 = 330
 wire2_2 = 483
 street_1 = 0
 street_2 = 610
-duong_1 = 30
-duong_2 = 610
-duong_di_1 = 60
-duong_di_2 = 610
-street1_1 = 90
-street1_2 = 610
-street2_1 = 120
-street2_2 = 610
-street3_1 = 150
-street3_2 = 610
-street4_1 = 180
-street4_2 = 610
-street5_1 = 210
-street5_2 = 610
-street6_1 = 240
-street6_2 = 610
-street7_1 = 270
-street7_2 = 610
-street8_1 = 300
-street8_2 = 610
-street9_1 = 330
-street9_2 = 610
-street10_1 = 360
-street10_2 = 610
-street11_1 = 60
-street11_2 = 680
-street12_1 = 90
-street12_2 = 680
-street13_1 = 120
-street13_2 = 680
-street14_1 = 150
-street14_2 = 680
-street15_1 = 180
-street15_2 = 680
-street16_1 = 210
-street16_2 = 680
-street17_1 = 240
-street17_2 = 680
-street18_1 = 270
-street18_2 = 680
-street19_1 = 300
-street19_2 = 680
+street2_1 = 0
+street2_2 = 680
+street_size_1 = 500
+street_size_2 = 32 
+
 tree_1 = 700
-tree_2 = 635
+tree_2 = 400
 tree2_1 = 700
-tree2_2 = 570
-tree3_1 = 700
-tree3_2 = 440
-tree4_1 = 800
-tree4_2 = 440
+tree2_2 = 450
+tree3_1 = 500
+tree3_2 = 400
+tree4_1 = 570
+tree4_2 = 400
 tree5_1 = 800
-tree5_2 = 570
+tree5_2 = 400
 tree6_1 = 800
-tree6_2 = 635
+tree6_2 = 400
 tree7_1 = 640
-tree7_2 = 572
+tree7_2 = 400
 tree8_1 = 750
-tree8_2 = 572
+tree8_2 = 400
 tree9_1 = 750
-tree9_2 = 637
+tree9_2 = 452
 tree10_1 = 400
 tree10_2 = 570
+tree11_1 = 550
+tree11_2 = 450
+tree12_1 = 600
+tree12_2 = 450
+tree13_1 = 650
+tree13_2 = 450
+tree14_1 = 795
+tree14_2 = 410
+tree15_1 = 900
+tree15_2 = 370
+tree15_size1 = 64
+tree15_size2 = 150
+tree16_1 = 990
+tree16_2 = 410
+tree17_1 = 1100
+tree17_2 = 410
+tree_size1 = 64
+tree_size2 = 100
+
 people1_1 = 40
 people1_2 = 470
 people2_1 = 70
@@ -161,12 +148,10 @@ sun_1 = 100
 sun_2 = 150
 moon_1 = 1330
 moon_2 = 100
-station_1 = 1050
-station_2 = 630
 rada_1 = 950
-rada_2 = 550
-satellite_1 = 950
-satellite_2 = 630
+rada_2 = 450
+satellite_1 = 850
+satellite_2 = 450
 plane_1 = 50
 plane_2 = 320
 vetinh_1 = 1330
@@ -180,16 +165,18 @@ traffic2_2 = 590
 traffic3_1 = 300
 traffic3_2 = 590
 speedometer_1 = 1060
-speedometer_2 = 500
+speedometer_2 = 350
 thermometer_1 = 10
 thermometer_2 = 0
 clock_1 = 1060
-clock_2 = 460
+clock_2 = 300
 clock_3 = 13
 clock_4 = 40
 
-sea_1 = 670
-sea_2 = 400
+sea_1 = 520
+sea_2 = 510
+sea_size_1 = 850
+sea_size_2 = 200
 sea2_1 = 790
 sea2_2 = 400
 sea3_1 = 600
@@ -200,9 +187,71 @@ sea5_1 = 800
 sea5_2 = 440
 sea6_1 = 550
 sea6_2 = 400
+invietnam_1 = 10
+invietnam_2 = 80
+pagoda_1 = 250
+pagoda_2 = 402
+pagoda2_1 = 370
+pagoda2_2 = 402
+church_1 = 240
+church_2 = 497
+duong_1 = 219
+duong_2 = 464
+duong_size_1 = 15
+duong_size_2 = 250
+mausoleum_bac_1 = 140
+mausoleum_bac_2 = 500
+submarine_1 = 710
+submarine_2 = 600
+
+boat_1 = 650
+boat_2 = 500
+boat_size_1 = 200
+boat_size_2 = 90
+
+boat2_1 = 900
+boat2_2 = 580
+boat2_size_1 = 120
+boat2_size_2 = 65
+boat3_1 = 950
+boat3_2 = 520
+boat4_1 = 1050
+boat4_2 = 560
+boat4_size_1 = 120
+boat4_size_2 = 100
+
+helicopter_1 = 780
+helicopter_2 = 507
+helicopter2_1 = 730
+helicopter_size_1 = 70
+helicopter_size_2 = 64
+helicopter2_2 = 505
+
+fish_1 = 800
+fish_2 = 600
+fish2_1 = 870
+fish2_2 = 650
+fish3_1 = 1200
+fish3_2 = 650
+shark_1 = 950
+shark_2 = 645
+shark_size_1 = 100
+shark_size_2 = 64
+bird_1 = 50
+bird_2 = 365
+bird2_1 = 100
+bird2_2 = 365
+bird3_1 = 150
+bird3_2 = 365
+bird4_1 = 200
+bird4_2 = 365
+bird5_1 = 250
+bird5_2 = 365
+bird6_1 = 300
+bird6_2 = 365
 
 rocket_1 = 0 # vị trí của đạn
-rocket_2 = 600
+rocket_2 = 450
 rocket1_change = 10 # tốc độ bắn ngang của đạn (nếu có)
 rocket2_change = 3 # tốc độ bắn lên của đạn
 rocket_state = True
@@ -220,6 +269,8 @@ font2 = pygame.font.SysFont('javanesetext', 30)
 font3 = pygame.font.SysFont("javanesetext", 25)
 font4 = pygame.font.SysFont("sans", 23)
 font5 = pygame.font.SysFont("sans", 20)
+font6 = pygame.font.SysFont("sans", 23)
+font7 = pygame.font.SysFont("sans", 23)
 
 sound_game = pygame.mixer.Sound("vippro33.mp3")
 sound2_game = pygame.mixer.Sound("vippro33.mp3")
@@ -248,39 +299,34 @@ electric_image = pygame.image.load("electric.png")
 dien_image = pygame.image.load("electric.png")
 elec_image = pygame.image.load("electric.png")
 wire_image = pygame.image.load("wire.png")
+wire_image = pygame.transform.scale(wire_image,(wire_size_1,wire_size_2))
 wire2_image = pygame.image.load("wire.png")
 street_image = pygame.image.load("street2.png")
-duong_image = pygame.image.load("street2.png")
-duong_di_image = pygame.image.load("street2.png")
-street1_image = pygame.image.load("street2.png")
+street_image = pygame.transform.scale(street_image,(street_size_1,street_size_2))
 street2_image = pygame.image.load("street2.png")
-street3_image = pygame.image.load("street2.png")
-street4_image = pygame.image.load("street2.png")
-street5_image = pygame.image.load("street2.png")
-street6_image = pygame.image.load("street2.png")
-street7_image = pygame.image.load("street2.png")
-street8_image = pygame.image.load("street2.png")
-street9_image = pygame.image.load("street2.png")
-street10_image = pygame.image.load("street2.png")
-street11_image = pygame.image.load("street2.png")
-street12_image = pygame.image.load("street2.png")
-street13_image = pygame.image.load("street2.png")
-street14_image = pygame.image.load("street2.png")
-street15_image = pygame.image.load("street2.png")
-street16_image = pygame.image.load("street2.png")
-street17_image = pygame.image.load("street2.png")
-street18_image = pygame.image.load("street2.png")
-street19_image = pygame.image.load("street2.png")
+street2_image = pygame.transform.scale(street2_image,(street_size_1,street_size_2))
 tree_image = pygame.image.load("tree.png")
 tree2_image = pygame.image.load("tree.png")
-tree3_image = pygame.image.load("tree.png")
-tree4_image = pygame.image.load("tree.png")
+tree3_image = pygame.image.load("forest.png")
+tree4_image = pygame.image.load("forest.png")
 tree5_image = pygame.image.load("tree.png")
 tree6_image = pygame.image.load("tree.png")
 tree7_image = pygame.image.load("forest.png")
 tree8_image = pygame.image.load("forest.png")
 tree9_image = pygame.image.load("forest.png")
 tree10_image = pygame.image.load("tree.png")
+tree11_image = pygame.image.load("forest.png")
+tree12_image = pygame.image.load("forest.png")
+tree13_image = pygame.image.load("forest.png")
+tree14_image = pygame.image.load("coconut3.png")
+tree15_image = pygame.image.load("coconut3.png")
+tree16_image = pygame.image.load("coconut.png")
+tree17_image = pygame.image.load("coconut.png")
+tree14_image = pygame.transform.scale(tree14_image, (tree_size1, tree_size2))
+tree15_image = pygame.transform.scale(tree15_image, (tree15_size1, tree15_size2))
+tree16_image = pygame.transform.scale(tree16_image, (tree_size1, tree_size2))
+tree17_image = pygame.transform.scale(tree17_image, (tree_size1, tree_size2))
+
 people1_image = pygame.image.load("people.png")
 people2_image = pygame.image.load("people.png")
 people3_image = pygame.image.load("people.png")
@@ -311,11 +357,38 @@ thermometer_image = pygame.image.load("hot.png")
 clock_image = pygame.image.load("clock2.png")
 clock_image2 = pygame.image.load("clock3.png")
 sea_image = pygame.image.load("sea.png")
+sea_image = pygame.transform.scale(sea_image, (sea_size_1, sea_size_2))
 sea2_image = pygame.image.load("sea.png")
 sea3_image = pygame.image.load("sea.png")
 sea4_image = pygame.image.load("sea.png")
 sea5_image = pygame.image.load("sea.png")
 sea6_image = pygame.image.load("sea.png")
+invietnam_image = pygame.image.load("location_vietnam.png")
+pagoda_image = pygame.image.load("pagoda.png")
+pagoda2_image = pygame.image.load("pagoda2.png")
+church_image = pygame.image.load("church.png")
+mausoleum_bac_image = pygame.image.load("mausoleum_bac.png")
+duong_image = pygame.image.load("duong.png")
+duong_image = pygame.transform.scale(duong_image, (duong_size_1, duong_size_2))
+submarine_image = pygame.image.load("submarine.png")
+boat_image = pygame.image.load("aircraft.png")
+boat_image = pygame.transform.scale(boat_image, (boat_size_1, boat_size_2))
+boat2_image = pygame.image.load("boat.png")
+boat2_image = pygame.transform.scale(boat2_image, (boat2_size_1, boat2_size_2))
+boat3_image = pygame.image.load("boat3.png")
+boat4_image = pygame.image.load("boat4.png")
+boat4_image = pygame.transform.scale(boat4_image, (boat4_size_1, boat4_size_2))
+helicopter_image = pygame.image.load("helicopter3.png")
+helicopter_image = pygame.transform.scale(helicopter_image, (helicopter_size_1, helicopter_size_2))
+helicopter2_image = pygame.image.load("helicopter2.png")
+fish_image = pygame.image.load("fish2.png")
+fish2_image = pygame.image.load("fish2.png")
+fish3_image = pygame.image.load("fish2.png")
+shark_image = pygame.image.load("shark.png")
+shark_image = pygame.transform.scale(shark_image, (shark_size_1, shark_size_2))
+
+bird_image = pygame.image.load("bird.png")
+
 
 rocket_image = pygame.image.load("rocket2.png")
 
@@ -404,99 +477,45 @@ def wire2(x, y):
 
 def street(x, y):
     screen.blit(street_image, (x, y))
-
-def duong(x, y):
-    screen.blit(duong_image, (x, y))
-
-def duong_di(x, y):
-    screen.blit(duong_di_image, (x, y))
-
-def street1(x, y):
-    screen.blit(street1_image, (x, y))
-
 def street2(x, y):
     screen.blit(street2_image, (x, y))
 
-def street3(x, y):
-    screen.blit(street3_image, (x, y))
-
-def street4(x, y):
-    screen.blit(street4_image, (x, y))
-
-def street5(x, y):
-    screen.blit(street5_image, (x, y))
-
-def street6(x, y):
-    screen.blit(street6_image, (x, y))
-
-def street7(x, y):
-    screen.blit(street7_image, (x, y))
-
-def street8(x, y):
-    screen.blit(street8_image, (x, y))
-
-def street9(x, y):
-    screen.blit(street9_image, (x, y))
-
-def street10(x, y):
-    screen.blit(street10_image, (x, y))
-
-def street11(x, y):
-    screen.blit(street11_image, (x, y))
-
-def street12(x, y):
-    screen.blit(street12_image, (x, y))
-
-def street13(x, y):
-    screen.blit(street13_image, (x, y))
-
-def street14(x, y):
-    screen.blit(street14_image, (x, y))
-
-def street15(x, y):
-    screen.blit(street15_image, (x, y))
-
-def street16(x, y):
-    screen.blit(street16_image, (x, y))
-
-def street17(x, y):
-    screen.blit(street17_image, (x, y))
-
-def street18(x, y):
-    screen.blit(street18_image, (x, y))
-
-def street19(x, y):
-    screen.blit(street19_image, (x, y))
-
 def tree(x, y):
     screen.blit(tree_image, (x, y))
-
 def tree2(x, y):
     screen.blit(tree2_image, (x, y))
-
 def tree3(x, y):
     screen.blit(tree3_image, (x, y))
-
 def tree4(x, y):
     screen.blit(tree4_image, (x, y))
 
 def tree5(x, y):
     screen.blit(tree5_image, (x, y))
-
 def tree6(x, y):
     screen.blit(tree6_image, (x, y))
-
 def tree7(x, y):
     screen.blit(tree7_image, (x, y))
-
 def tree8(x, y):
     screen.blit(tree8_image, (x, y))
-
 def tree9(x, y):
     screen.blit(tree9_image, (x, y))
 
 def tree10(x, y):
     screen.blit(tree10_image, (x+-8, y))
+def tree11(x, y):
+    screen.blit(tree11_image, (x, y))
+def tree12(x, y):
+    screen.blit(tree12_image, (x, y))
+def tree13(x, y):
+    screen.blit(tree13_image, (x, y))
+def tree14(x, y):
+    screen.blit(tree14_image, (x, y))
+def tree15(x, y):
+    screen.blit(tree15_image, (x, y))
+def tree16(x, y):
+    screen.blit(tree16_image, (x, y))
+def tree17(x, y):
+    screen.blit(tree17_image, (x, y))
 
 def people1(x, y):
     screen.blit(people1_image, (x, y))
@@ -581,25 +600,75 @@ def sea5(x, y):
 def sea6(x, y):
     screen.blit(sea6_image, (x, y))
 
+def invietnam(x, y):
+    screen.blit(invietnam_image, (x, y))
+
+def pagoda(x, y):
+    screen.blit(pagoda_image, (x, y))
+def pagoda2(x, y):
+    screen.blit(pagoda2_image, (x, y))
+
+def church(x, y):
+    screen.blit(church_image, (x, y))
+
+def mausoleum_bac(x, y):
+    screen.blit(mausoleum_bac_image, (x, y))
+
+def duong(x, y):
+    screen.blit(duong_image, (x, y))
+
+def submarine(x, y):
+    screen.blit(submarine_image, (x, y))
+
+def boat(x, y):
+    screen.blit(boat_image, (x, y))
+def boat2(x, y):
+    screen.blit(boat2_image, (x, y))
+def boat3(x, y):
+    screen.blit(boat3_image, (x, y))
+def boat4(x, y):
+    screen.blit(boat4_image, (x, y))
+
+
+def helicopter(x, y):
+    screen.blit(helicopter_image, (x, y))
+def helicopter2(x, y):
+    screen.blit(helicopter2_image, (x, y))
+
+def fish(x, y):
+    screen.blit(fish_image,(x, y))
+def fish2(x, y):
+    screen.blit(fish2_image,(x, y))
+def fish3(x, y):
+    screen.blit(fish3_image,(x, y))
+def shark(x, y):
+    screen.blit(shark_image,(x, y))
+
+def bird(x, y):
+    screen.blit(bird_image,(x, y))
 
 tuong = True
 
 while tuong: # vòng lặp
-    pygame.mixer.Sound.play(sound2_game)
-
+    
+    
     screen.blit(background_image, (background_1,background_2))
-    text = font.render('km/h : '+str(plane_1*10),True,text_color)
-    text_2 = font2.render("Hello Universe", True, text_color)
-    text_3 = font3.render("27°C", True, text2_color)
-    text_4 = font4.render("7:00Am", True, text2_color)
-    text_5 = font5.render("max speed 133km/4m", True, text_color)
+    text = font.render('km/h : '+str(plane_1*10),True,text_blue)
+    text_2 = font2.render("Hello Universe", True, text_blue)
+    text_3 = font3.render("27°C", True, text_red)
+    text_4 = font4.render("7:00Am", True, text_red)
+    text_5 = font5.render("max speed 133km/4m", True, text_blue)
+    text_6 = font6.render("In Viet", True, text_red)
+    text_7 = font7.render("Nam", True, text_yellow)
 
     pygame.display.set_icon(icon)
-    screen.blit(text, (1100,500))
+    screen.blit(text, (1100,350))
     screen.blit(text_2, (550,-10))
     screen.blit(text_3, (45,-10))
     screen.blit(text_4, (50,43))
-    screen.blit(text_5, (1100,465))
+    screen.blit(text_5, (1100,300))
+    screen.blit(text_6, (45, 82))
+    screen.blit(text_7,(102,82))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -630,7 +699,7 @@ while tuong: # vòng lặp
 #vị trí lề phải game mà tên lửa bay tới và đứng lại
     
     if rocket_2 <= 0:
-        rocket_2 = 600 # vị trí tên lửa bắn lên
+        rocket_2 = 450 # vị trí tên lửa bắn lên
         rocket_state = True
     # nếu là True thì auto bắn k cần nhấn space
     if rocket_state is True:
@@ -651,6 +720,41 @@ while tuong: # vòng lặp
     plane_1 += 4
     if plane_1 + 0 > Width:
             plane_1 = Height - 700
+
+    submarine_1 += 2
+    if submarine_1 + 0 > Width:
+            submarine_1 = Height - 210
+    boat_1 += 2
+    if boat_1 + 0 > Width:
+            boat_1 = Height - 210
+    helicopter_1 += 2
+    if helicopter_1 + 0 > Width:
+            helicopter_1 = Height - 210
+    helicopter2_1 += 2
+    if helicopter2_1 + 0 > Width:
+            helicopter2_1 = Height - 210
+
+    boat2_1 += 2
+    if boat2_1 + 0 > Width:
+            boat2_1 = Height - 210
+    boat3_1 += 3
+    if boat3_1 + 0 > Width:
+            boat3_1 = Height - 200
+    boat4_1 += 2
+    if boat4_1 + 0 > Width:
+            boat4_1 = Height - 210
+    fish_1 += 2
+    if fish_1 + 0 > Width:
+            fish_1 = Height - 200
+    fish2_1 += 2
+    if fish2_1 + 0 > Width:
+            fish2_1 = Height - 210
+    fish3_1 += 2
+    if fish3_1 + 0 > Width:
+            fish3_1 = Height - 210
+    shark_1 += 2
+    if shark_1 + 0 > Width:
+            shark_1 = Height - 210
 
     car_1 += 4
     if car_1 + 750 > Width:
@@ -679,8 +783,26 @@ while tuong: # vòng lặp
     cloud3_1 += 0.4
     if cloud3_1 + 765 > Width:
             cloud3_1 = Height - 1600
-    
-    
+
+    bird_1 += 2
+    if bird_1 + 510 > Width:
+            bird_1 = Height - 5000
+    bird2_1 += 2
+    if bird2_1 + 500 > Width:
+            bird2_1 = Height - 5000
+    bird3_1 += 2
+    if bird3_1 + 495 > Width:
+            bird3_1 = Height - 5000
+    bird4_1 += 2
+    if bird4_1 + 470 > Width:
+            bird4_1 = Height - 5000
+    bird5_1 += 2
+    if bird5_1 + 460 > Width:
+            bird5_1 = Height - 5000
+    bird6_1 += 2
+    if bird6_1 + 450 > Width:
+            bird6_1 = Height - 5000
+
     vetinh_1 -= 1
     if vetinh_1 + 0 > Width:
             vetinh_1 = Height - 300
@@ -695,12 +817,18 @@ while tuong: # vòng lặp
     if background_5 + 0 > Width:
             background_5 = Height - 700
 
+
+    invietnam(invietnam_1, invietnam_2)
     clock2(clock_3, clock_4)
     clock(clock_1,clock_2)
     thermometer(thermometer_1,thermometer_2)
     speedometer(speedometer_1,speedometer_2)
-    #background3(background_5,background_6)
-    #background2(background_3, background_4)
+    background3(background_5,background_6)
+    background2(background_3, background_4)
+    tree14(tree14_1, tree14_2)
+    tree15(tree15_1, tree15_2)
+    tree16(tree16_1, tree16_2)
+    tree17(tree17_1, tree17_2)
     launch(launch_1, launch_2)# cho tên lửa vô game
     ufo(ufo_1, ufo_2)
     flag(flag_1, flag_2)
@@ -708,67 +836,64 @@ while tuong: # vòng lặp
     home(home_1, home_2)
     skyscraper(skyscraper_1, skyscraper_2)
     hospital(hospital_1, hospital_2)
-    mausoleum(mausoleum_1, mausoleum_2)
-    tower(tower_1, tower_2)
-    hotel(hotel_1, hotel_2)
+    
+    mausoleum_bac(mausoleum_bac_1, mausoleum_bac_2)
     motel(motel_1, motel_2)
     telecom(telecom_1, telecom_2)
-    street(street_1, street_2)
     duong(duong_1, duong_2)
-    duong_di(duong_di_1, duong_di_2)
-    street1(street1_1, street1_2)
+    street(street_1, street_2)
     street2(street2_1, street2_2)
-    street3(street3_1, street3_2)
-    street4(street4_1, street4_2)
-    street5(street5_1, street5_2)
-    street6(street6_1, street6_2)
-    street7(street7_1, street7_2)
-    street8(street8_1, street8_2)
-    street9(street9_1, street9_2)
-    street10(street10_1, street10_2)
-    street11(street11_1, street11_2)
-    street12(street12_1, street12_2)
-    street13(street13_1, street13_2)
-    street14(street14_1, street14_2)
-    street15(street15_1, street15_2)
-    street16(street16_1, street16_2)
-    street17(street17_1, street17_2)
-    street18(street18_1, street18_2)
-    street19(street19_1, street18_2)
-
+    
+    mausoleum(mausoleum_1, mausoleum_2)
+    silver(silver_1, silver_2)
+    hotel(hotel_1, hotel_2)
+    tower(tower_1, tower_2)
+    
     car(car_1, car_2)
     oto(oto_1, oto_2)
     yellow(yellow_1, yellow_2)
-    silver(silver_1, silver_2)
 
-    sea(sea_1,sea_2)
-    sea2(sea2_1, sea2_2)
-    sea3(sea3_1, sea3_2)
-    sea4(sea4_1, sea4_2)
-    sea5(sea5_1,sea5_2)
-    sea6(sea6_1, sea6_2)
-
-
-    mountain2(mountain2_1, mountain2_2)
+    tree3(tree3_1, tree3_2)
+    tree4(tree4_1, tree4_2)
     tree7(tree7_1, tree7_2)
+    tree11(tree11_1, tree11_2)
+    tree12(tree12_1, tree12_2)
+    tree13(tree13_1, tree13_2)
+    
+    sea(sea_1, sea_2)
+    submarine(submarine_1, submarine_2)
+    helicopter2(helicopter2_1, helicopter2_2)
+    boat3(boat3_1, boat3_2)
+    boat(boat_1, boat_2)
+    boat2(boat2_1, boat2_2)
+    
+    boat4(boat4_1, boat4_2)
+    helicopter(helicopter_1, helicopter_2)
+    fish(fish_1, fish_2)
+    fish(fish2_1, fish2_2)
+    fish(fish3_1, fish3_2)
+    shark(shark_1, shark_2)
+
+    pagoda(pagoda_1, pagoda_2)
+    pagoda2(pagoda2_1, pagoda2_2)
+    church(church_1, church_2)
+    
+    mountain2(mountain2_1, mountain2_2)
+    elec(elec_1, elec_2)
     nui(nui_1, nui_2)
     mountain(mountain_1, mountain_2)
-
     tree10(tree10_1, tree10_2)
+
     airport(airport_1, airport_2)
     electric(electric_1, electric_2)
     wire(wire_1, wire_2)
-    wire2(wire2_1, wire2_2)
-    elec(elec_1, elec_2)
     dien(dien_1, dien_2)
     
     tree8(tree8_1, tree8_2)
     tree9(tree9_1, tree9_2)
-    tree5(tree5_1, tree5_2)
-    tree6(tree6_1, tree6_2)
     tree(tree_1, tree_2)
     tree2(tree2_1, tree2_2)
-
+    
     people1(people1_1, people1_2)
     people2(people2_1, people2_2)
     people3(people3_1, people3_2)
@@ -797,14 +922,19 @@ while tuong: # vòng lặp
     traffic(traffic_1, traffic_2)
     traffic2(traffic2_1, traffic2_2)
     traffic3(traffic3_1, traffic3_2)
+    bird(bird_1, bird_2)
+    bird(bird2_1, bird2_2)
+    bird(bird3_1, bird3_2)
+    bird(bird4_1, bird4_2)
+    bird(bird5_1, bird5_2)
+    bird(bird6_1, bird6_2)
     
-
+    #fire_rocket(launch_1, rocket_2)
 # nếu in ra fire_rocket(launch_1, rocket_2) ở cuối
 # thì tên lửa đè lên 2 backgrounnd và bắn liên tục lên
 # còn khi fire_rocket(launch_1, rocket_2) được in dưới
 # dòng 576 thì tên lửa bị 2 background đè lên nên k thấy 
 # khi đó nhấn space mới thấy tên lửa bắn
-
     pygame.display.update()
 pygame.quit()
      # đang trong vòng lặp
