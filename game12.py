@@ -254,7 +254,7 @@ rocket_1 = 0 # vị trí của đạn
 rocket_2 = 450
 rocket1_change = 10 # tốc độ bắn ngang của đạn (nếu có)
 rocket2_change = 3 # tốc độ bắn lên của đạn
-rocket_state = True
+rocket_state = True # "shoot"
 # nếu là True thì (hack game) auto bắn k cần nhấn space
 
 screen = pygame.display.set_mode((Width, Height))
@@ -651,7 +651,7 @@ tuong = True
 
 while tuong: # vòng lặp
     
-    
+    pygame.mixer.Sound.play(sound2_game)
     screen.blit(background_image, (background_1,background_2))
     text = font.render('km/h : '+str(plane_1*10),True,text_blue)
     text_2 = font2.render("Hello Universe", True, text_blue)
@@ -700,7 +700,7 @@ while tuong: # vòng lặp
     
     if rocket_2 <= 0:
         rocket_2 = 450 # vị trí tên lửa bắn lên
-        rocket_state = True
+        rocket_state = True #"shoot"
     # nếu là True thì auto bắn k cần nhấn space
     if rocket_state is True:
         fire_rocket(launch_1, rocket_2)
@@ -823,8 +823,8 @@ while tuong: # vòng lặp
     clock(clock_1,clock_2)
     thermometer(thermometer_1,thermometer_2)
     speedometer(speedometer_1,speedometer_2)
-    background3(background_5,background_6)
-    background2(background_3, background_4)
+    #background3(background_5,background_6)
+    #background2(background_3, background_4)
     tree14(tree14_1, tree14_2)
     tree15(tree15_1, tree15_2)
     tree16(tree16_1, tree16_2)
