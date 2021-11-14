@@ -7,6 +7,7 @@ import pyttsx3
 bot = pyttsx3.init()  
 voices = bot.getProperty('voices') #nhận thông tin về giọng
 bot.setProperty('voice', voices[1].id)  # giọng nữ id là 1
+bot_said = "press enter to control over me"
 init(wrap=False)
 stream = AnsiToWin32(sys.stderr).stream
 turn_on = input(max(["""
@@ -16,7 +17,7 @@ turn_on = input(max(["""
 """], default=True))
 bot.say("bot runing")
 bot.runAndWait()
-print(Fore.RED + '{:^65}'.format("hello Clearlove7 !"), file=stream)
+print(Fore.RED + '{:^65}'.format("Hello Clearlove7 !"), file=stream)
 print(Fore.GREEN + "", file=stream)
 bot.say(" hello Clearlove7")
 bot.runAndWait()
@@ -29,7 +30,7 @@ for c in bot_turn_on:
     print(c ,end="", flush=True)
     sleep(0.01)
 print(Fore.GREEN + "", file=stream)
-bot.say("press enter to control over me")
+bot.say(bot_said)
 bot.runAndWait()
 def start_on(on_youtube, on_bot = turn_on):
     print(on_bot)
@@ -61,7 +62,7 @@ tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chro
 tuong.set_window_size(750,700)
 tuong.get("https://www.youtube.com/watch?v=BPUPMJ0nYO0")
 sleep(3)
-bot.say("press enter to control over me")
+bot.say(bot_said)
 bot.runAndWait()
 input("""\n 
                ┌───────────────────────────────────────┐
@@ -75,7 +76,7 @@ print("""\n
                            └────────────┘\n""")
 tuong.get("https://www.facebook.com/watch?ref=search&v=792650660907793&external_log_id=b7e2e990-7dad-4077-838f-782ad81c1c58&q=skt%20vs%20edg%20lol%20esport")
 tuong.execute_script("window.scroll(100,0)")
-bot.say("press enter to control over me")
+bot.say(bot_said)
 bot.runAndWait()
 print(Fore.WHITE + "", file=stream)
 input('''\n
@@ -89,11 +90,18 @@ start_on("""\n
 bot.say("turn on google translate")
 bot.runAndWait()
 tuong.get("https://www.google.com/search?q=gg+d%E1%BB%8Bch&oq=gg&aqs=chrome.0.69i59j69i57j0i131i433i512l2j0i433i512j0i131i433i512l2j69i60.2320j0j7&sourceid=chrome&ie=UTF-8")
-tuong.find_element_by_id("tw-source-text-ta").send_keys("""con bot của cháu tên là : Warker_YTt sophia :D .
-Nó hơi chậm vì cháu để nhiều sleep time mong mọi ng thông cảm. :D
+tuong.find_element_by_id("tw-source-text-ta").send_keys("""Machines, robots, and androids, 
+are not a recent invention: artificial life forms have kindled the imagination of mankind for centuries. 
+We already know concepts of robots from earlier times like Greek mythology and literature of past centuries.
+Pandora was formed out of clay by Hephaestus; Olimpia is the robot woman whom the protagonist in ETA Hoffmann's "Sandman" falls in love with, and Hadaly was the first fictional artificial life form which was called "Android". 
+Meanwhile, several decades (and in some cases even centuries) ago, robots made the leap from fantasy to reality.
+In our analysis of the naming of robots though, we do not distinguish between real and fictional machines, 
+automata and artificial intelligences. 
+We deal with all kinds of names for artificial life forms: robots, machines, and automata, whether they exist, have existed, or whether they are sprung from the realm of legend or the imagination of science fiction writers.
 """)
+tuong.execute_script("window.scroll(0,180)")
 sleep(1)
-bot.say("press enter to control over me")
+bot.say(bot_said)
 bot.runAndWait()
 print(Fore.MAGENTA + "", file=stream)
 input("""\n
@@ -134,7 +142,9 @@ bot.runAndWait()
 tuong.find_element_by_name("commit").click()
 sleep(2)
 tuong.execute_script("window.scroll(0,900)")
-bot.say("press enter to control over me")
+sleep(2)
+tuong.get("https://github.com/tuongclearlove7")
+bot.say(bot_said)
 bot.runAndWait()
 print(Fore.GREEN + "", file=stream)
 input("""\n 
