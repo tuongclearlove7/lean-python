@@ -4,35 +4,46 @@ import sys
 from colorama import Fore
 from colorama import init, AnsiToWin32
 import pyttsx3
-bot = pyttsx3.init()  
-voices = bot.getProperty('voices') #nhận thông tin về giọng
-bot.setProperty('voice', voices[1].id)  # giọng nữ id là 1
-bot_said = "press enter to control over me"
 init(wrap=False)
+bot = pyttsx3.init() 
+voices = bot.getProperty('voices') # information about voices (thông tin về giọng nói)
+bot.setProperty('voice', voices[1].id) #female voice id 1 (giọng nữ id là 1)
+bot_said = "press enter to control over me"
+file_object = open('text.txt')
+data = file_object.read() # reading file text.txt
 stream = AnsiToWin32(sys.stderr).stream
 turn_on = input(max(["""
-                  ┌──────────────────────────┐
-                  │ Bấm enter để bật con bot │
-                  └──────────────────────────┘
+                     ┌──────────────────────────┐
+                     │ Bấm enter để bật con bot │
+                     └──────────────────────────┘
 """], default=True))
-bot.say("bot runing")
+print(Fore.CYAN + "", file=stream)
+with open("bot.txt", "r") as file: #"bot.txt" is file (là file chứa text-image đã tạo.)
+    for line in file:
+        print(line.strip())
+        sleep(0.05)
+bot.say("bot runing")# bot said 
 bot.runAndWait()
-print(Fore.RED + '{:^65}'.format("Hello Clearlove7 !"), file=stream)
-print(Fore.GREEN + "", file=stream)
+print(Fore.RED + '{:^75}'.format("Hello Clearlove7 !"), file=stream) # distance ^75 (khoảng cách căn lề giữa ^75)
+print(Fore.GREEN + "", file=stream)# text color 
 bot.say(" hello Clearlove7")
 bot.runAndWait()
-bot_turn_on = '{:^60}'.format("""
-    ┌───────────────────────────────────────────────────────────┐
-    │Cháu bật lên rồi ạ, ông chủ bấm enter ra lệnh cho cháu đi ạ│
-    └───────────────────────────────────────────────────────────┘
-""")
+tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
+tuong.set_window_size(750,700)
+tuong.get("https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif")
+
+sleep(2)
+bot_turn_on = '{:^60}'.format("""\n
+        ┌───────────────────────────────────────────────────────────┐
+        │Cháu bật lên rồi ạ, ông chủ bấm enter ra lệnh cho cháu đi ạ│
+        └───────────────────────────────────────────────────────────┘\n""") 
 for c in bot_turn_on:
     print(c ,end="", flush=True)
-    sleep(0.01)
+    sleep(0.005)
 print(Fore.GREEN + "", file=stream)
 bot.say(bot_said)
 bot.runAndWait()
-def start_on(on_youtube, on_bot = turn_on):
+def start_on(on_youtube, on_bot = turn_on): # define (tạo hàm để bật bot và bật youtube...)
     print(on_bot)
     sleep(2)
     print(on_youtube)
@@ -58,8 +69,7 @@ def start_git(on_github="""
     print(on_github)
 def login_git(login):
     print(login)
-tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
-tuong.set_window_size(750,700)
+
 tuong.get("https://www.youtube.com/watch?v=BPUPMJ0nYO0")
 sleep(3)
 bot.say(bot_said)
@@ -90,15 +100,7 @@ start_on("""\n
 bot.say("turn on google translate")
 bot.runAndWait()
 tuong.get("https://www.google.com/search?q=gg+d%E1%BB%8Bch&oq=gg&aqs=chrome.0.69i59j69i57j0i131i433i512l2j0i433i512j0i131i433i512l2j69i60.2320j0j7&sourceid=chrome&ie=UTF-8")
-tuong.find_element_by_id("tw-source-text-ta").send_keys("""Machines, robots, and androids, 
-are not a recent invention: artificial life forms have kindled the imagination of mankind for centuries. 
-We already know concepts of robots from earlier times like Greek mythology and literature of past centuries.
-Pandora was formed out of clay by Hephaestus; Olimpia is the robot woman whom the protagonist in ETA Hoffmann's "Sandman" falls in love with, and Hadaly was the first fictional artificial life form which was called "Android". 
-Meanwhile, several decades (and in some cases even centuries) ago, robots made the leap from fantasy to reality.
-In our analysis of the naming of robots though, we do not distinguish between real and fictional machines, 
-automata and artificial intelligences. 
-We deal with all kinds of names for artificial life forms: robots, machines, and automata, whether they exist, have existed, or whether they are sprung from the realm of legend or the imagination of science fiction writers.
-""")
+tuong.find_element_by_id("tw-source-text-ta").send_keys(data)
 tuong.execute_script("window.scroll(0,180)")
 sleep(1)
 bot.say(bot_said)
@@ -155,6 +157,7 @@ end_bot()
 print(Fore.RED + "", file=stream)
 bot.say("exit bot")
 bot.runAndWait()
+tuong.get("https://www.stoneshot.com/stoneshotblog/wp-content/uploads/2021/02/No-Robots_V4.gif")
 bot_turn_off = '{:^55}'.format("""\n
                    ┌───────────────────────────────────────┐
                    │Vâng ạ, cháu tắt đây ạ tạm biệt ông chủ│
