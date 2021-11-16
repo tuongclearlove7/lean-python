@@ -1,4 +1,3 @@
-from os import get_terminal_size
 from time import sleep
 from selenium import webdriver
 import sys
@@ -18,9 +17,12 @@ turn_on = input(max(["""
                      │ Bấm enter để bật con bot │
                      └──────────────────────────┘
 """], default=True)
-                        )
-print(Fore.CYAN + "", file=stream
-                            )
+                    )
+control_bot = """\n 
+               ┌───────────────────────────────────────┐
+               │ông chủ bấm enter ra lệnh cho cháu đi ạ│
+               └───────────────────────────────────────┘\n"""   
+print(Fore.CYAN + "", file=stream)
 with open("bot.txt", "r") as file: #"bot.txt" is file (là file chứa text-image đã tạo.)
     for line in file:
         print(line.strip(
@@ -47,7 +49,7 @@ for c in bot_turn_on:
 print(Fore.GREEN + "", file=stream)
 bot.say(bot_said)
 bot.runAndWait()
-def start_on(on_bot = turn_on): # define (tạo hàm để bật bot)
+def start_on(on_bot = turn_on): # define function (tạo hàm để bật bot)
     print(on_bot)
     sleep(2)
 input("")
@@ -68,7 +70,6 @@ turn_on_Y_F_G = my_bot("""
                               ┌────────────┐
                               │ Bật Github │
                               └────────────┘""")
-
 print(Fore.BLUE + "", file=stream)
 def login_git(login):
     print(login)
@@ -83,10 +84,7 @@ tuong.get("https://www.youtube.com/watch?v=sX1Y2JMK6g8")
 sleep(3)
 bot.say(bot_said)
 bot.runAndWait()
-input("""\n 
-               ┌───────────────────────────────────────┐
-               │ông chủ bấm enter ra lệnh cho cháu đi ạ│
-               └───────────────────────────────────────┘\n""")
+input(control_bot)
 bot.say("turn on Facebook")
 bot.runAndWait()
 print(Fore.BLUE + "", file=stream)
@@ -96,11 +94,7 @@ tuong.execute_script("window.scroll(100,0)")
 bot.say(bot_said)
 bot.runAndWait()
 print(Fore.WHITE + "", file=stream)
-input('''\n
-                 ┌───────────────────────────────────────┐
-                 │ông chủ bấm enter ra lệnh cho cháu đi ạ│
-                 └───────────────────────────────────────┘\n''')
-
+input(control_bot)
 start_on("""\n
                            ┌───────────────┐
                            │Bật google dịch│
@@ -113,18 +107,13 @@ if send_text == tuong.find_element_by_id("tw-spkr-button").click():
     print(send_text ,"""
                                 ┌────┐
                                 │dịch│
-                                └────┘
-
-    """)
+                                └────┘""")
     send_text == tuong.execute_script("window.scroll(0,180)")
 sleep(2)
 bot.say(bot_said)
 bot.runAndWait()
 print(Fore.MAGENTA + "", file=stream)
-input("""\n
-               ┌───────────────────────────────────────┐
-               │ông chủ bấm enter ra lệnh cho cháu đi ạ│
-               └───────────────────────────────────────┘\n""")
+input(control_bot)
 bot.say("turn on github")
 bot.runAndWait()
 print(turn_on_Y_F_G.on_github)
@@ -139,7 +128,7 @@ login_git("""\n
                                 │Đăng nhập│
                                 └─────────┘\n""")
 sleep(1)
-tuong.find_element_by_id("login_field").send_keys("cocaicc")
+tuong.find_element_by_id("login_field").send_keys("")
 sleep(1)
 login_git("""\n
                               ┌──────────────┐
@@ -148,7 +137,7 @@ login_git("""\n
 sleep(1)
 bot.say("enter password")
 bot.runAndWait()
-tuong.find_element_by_id("password").send_keys("deocogi")
+tuong.find_element_by_id("password").send_keys("")
 sleep(1)
 login_git("""\n
                                ┌─────────────┐
@@ -163,10 +152,7 @@ sleep(2)
 tuong.get("https://github.com/tuongclearlove7")
 bot.say(bot_said)
 bot.runAndWait()
-input("""\n 
-                   ┌───────────────────────────────────────┐
-                   │ông chủ bấm enter ra lệnh cho cháu đi ạ│
-                   └───────────────────────────────────────┘\n""")
+input(control_bot)
 print(Fore.RED + "", file=stream)
 print(end_bot(1))
 bot.say("exit bot")
