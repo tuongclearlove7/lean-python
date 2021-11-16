@@ -146,7 +146,7 @@ login_git("""\n
                                 │Đăng nhập│
                                 └─────────┘\n""")
 sleep(1)
-tuong.find_element_by_id("login_field").send_keys("tuongclearlove7")
+tuong.find_element_by_id("login_field").send_keys("")
 sleep(1)
 login_git("""\n
                               ┌──────────────┐
@@ -155,7 +155,7 @@ login_git("""\n
 sleep(1)
 bot.say("enter password")
 bot.runAndWait()
-tuong.find_element_by_id("password").send_keys("tuongyeuthao1")
+tuong.find_element_by_id("password").send_keys("")
 sleep(1)
 start_git("""\n
                                ┌─────────────┐
