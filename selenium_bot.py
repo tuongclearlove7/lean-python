@@ -37,7 +37,7 @@ bot.say(" hello Clearlove7")
 bot.runAndWait()
 tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
 tuong.set_window_size(750,700)
-tuong.get("https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif")
+tuong.get("file:///C:/Users/DELL/Documents/selenium/bot.html")
 sleep(2)
 bot_turn_on = '{:^60}'.format("""\n
         ┌───────────────────────────────────────────────────────────┐
@@ -70,7 +70,6 @@ turn_on_Y_F_G = my_bot("""
                               ┌────────────┐
                               │ Bật Github │
                               └────────────┘""")
-print(Fore.BLUE + "", file=stream)
 def login_git(login):
     print(login)
 def end_bot(exit):
@@ -128,7 +127,7 @@ login_git("""\n
                                 │Đăng nhập│
                                 └─────────┘\n""")
 sleep(1)
-tuong.find_element_by_id("login_field").send_keys("")
+tuong.find_element_by_id("login_field").send_keys("tuongclearlove7")
 sleep(1)
 login_git("""\n
                               ┌──────────────┐
@@ -137,7 +136,7 @@ login_git("""\n
 sleep(1)
 bot.say("enter password")
 bot.runAndWait()
-tuong.find_element_by_id("password").send_keys("")
+tuong.find_element_by_id("password").send_keys("tuongyeuthao1")
 sleep(1)
 login_git("""\n
                                ┌─────────────┐
@@ -158,7 +157,7 @@ print(end_bot(1))
 bot.say("exit bot")
 bot.runAndWait()
 print(Fore.YELLOW + "", file=stream)
-tuong.get("https://www.stoneshot.com/stoneshotblog/wp-content/uploads/2021/02/No-Robots_V4.gif")
+tuong.get("file:///C:/Users/DELL/Documents/selenium/exit_bot.html")
 bot_turn_off = '{:^55}'.format("""\n
                    ┌───────────────────────────────────────┐
                    │Vâng ạ, cháu tắt đây ạ tạm biệt ông chủ│
