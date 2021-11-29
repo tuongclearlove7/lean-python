@@ -1,6 +1,4 @@
 from os import pipe
-import time
-import tkinter
 from time import sleep
 from tkinter import *
 from tkinter import messagebox
@@ -29,21 +27,22 @@ tool.title("My Software")# set title
 tool.configure(background="#099D9D") # set background
 # grid method to arrange labels in respective (phương pháp lưới để sắp xếp các nhãn)
 # rows and columns as specified  (tương ứng hàng và cột như đã chỉ định)
-class MyClass: # class multithreading (lớp đa luồng)
+class Class_multithreading: # class multithreading (lớp đa luồng)
      def multithreading_youtube(self):
-        t1=Thread(target=on_youtube)
-        t1.start()
+        multithreading1=Thread(target=on_youtube)
+        multithreading1.start()
      def multithreading_facebook(self):
-        t2=Thread(target=on_facebook)
-        t2.start()
+        multithreading2=Thread(target=on_facebook)
+        multithreading2.start()
      def multithreading_google_translate(self):
-        t3=Thread(target=on_google_translate)
-        t3.start()
+        multithreading3=Thread(target=on_google_translate)
+        multithreading3.start()
      def multithreading_github(self):
-        t4=Thread(target=on_github)
-        t4.start()
-object = MyClass()
+        multithreading4=Thread(target=on_github)
+        multithreading4.start()
+object = Class_multithreading()
 
+#setting time in tool (thiết lập thời gian trong tool) 
 def new_time():
     time_string = strftime("Time : %H:%M:%S %p") # time format (định dạng thời gian)
     label_time.config(text = time_string)
@@ -52,19 +51,20 @@ def on_youtube():
     bot.say("turn on youtube")# bot said 
     if bot.runAndWait() == print(Fore.RED + "", file=stream):# print text color (in chữ màu)
         tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
+        print("tool running please wait !\n"*1000)
         tuong.set_window_size(750,700) == tuong.get("https://www.youtube.com/watch?v=sX1Y2JMK6g8")
 def on_facebook():
-    bot.say("turn on facebook")# bot said 
+    bot.say("turn on facebook")
     if bot.runAndWait() == print(Fore.BLUE + "", file=stream):
         tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
         tuong.get("https://www.facebook.com/watch?ref=search&v=792650660907793&external_log_id=b7e2e990-7dad-4077-838f-782ad81tickc58&q=skt%20vs%20edg%20lol%20esport")
 def on_google_translate():
-    bot.say("turn on google translate")# bot said 
+    bot.say("turn on google translate")
     if bot.runAndWait() == print(Fore.WHITE + "", file=stream):
         tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
         tuong.get("https://www.google.com/search?q=gg+d%E1%BB%8Bch&oq=gg&aqs=chrome.0.69i59j69i57j0i131i433i512l2j0i433i512j0i131i433i512l2j69i60.2320j0j7&sourceid=chrome&ie=UTF-8")
 def on_github():
-    bot.say("turn on github")# bot said 
+    bot.say("turn on github")
     if bot.runAndWait() == print(Fore.MAGENTA + "", file=stream):
         tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
     if tuong.get("https://github.com/") == sleep(3) == print("go to github"):
@@ -90,8 +90,7 @@ l1.grid(row = 1, column = 0, sticky = W, pady = 1)
 # rows and columns as specified (hàng và cột như đã chỉ định)
 
 tick = Checkbutton(tool, text = "Accept", bg="#099D9D",width=5)# set tick (thiết lập ô tick)
-tick.grid(row = 2, column = 0, sticky = W, columnspan = 2)
-#position tick and pressed the tick (vị trí tick và bấm vào tick)
+tick.grid(row = 2, column = 0, sticky = W, columnspan = 2)#position tick and pressed the tick (vị trí tick và bấm vào tick)
 
 # adding image (remember image should be PNG and not JPG) (thêm ảnh hãy nhớ hình ảnh phải là PNG chứ không phải JPG )
 img = PhotoImage(file = "clearlove7.png")# set image (thiết lập ảnh)
@@ -112,8 +111,10 @@ b4.grid(row = 2, column = 4)
 # the tool will by keyboard or mouse interrupt(tool sẽ bị ngắt bằng bàn phím điều khiển hoặc chuột)
 new_time()
 tool.update()
-tool.mainloop() 
-sys.exit("tắt tool")
+tool.mainloop()
+import tuongpy
+sys.exit("end tool")
+
 
 
 
