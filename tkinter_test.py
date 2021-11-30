@@ -1,4 +1,5 @@
 from os import pipe
+import threading
 from time import sleep
 from tkinter import *
 from tkinter import messagebox
@@ -12,6 +13,10 @@ import pyttsx3
 import tkinter as tk 
 from time import strftime
 from threading import *
+
+app = Tk()
+
+app.mainloop()
 
 init(wrap=False)
 stream = AnsiToWin32(sys.stderr).stream # text color
@@ -27,31 +32,42 @@ tool.title("My Software")# set title
 tool.configure(background="#099D9D") # set background
 # grid method to arrange labels in respective (phương pháp lưới để sắp xếp các nhãn)
 # rows and columns as specified  (tương ứng hàng và cột như đã chỉ định)
+
+
+#key = 'tuong'
+#print({'tuong': lambda: (type(init))} [key]())
+
 class Class_multithreading: # class multithreading (lớp đa luồng)
-     def multithreading_youtube(self):
-        multithreading1=Thread(target=on_youtube)
-        multithreading1.start()
-     def multithreading_facebook(self):
-        multithreading2=Thread(target=on_facebook)
-        multithreading2.start()
-     def multithreading_google_translate(self):
-        multithreading3=Thread(target=on_google_translate)
-        multithreading3.start()
-     def multithreading_github(self):
-        multithreading4=Thread(target=on_github)
-        multithreading4.start()
+    def __init__(self):
+            super().__init__()
+            print(self,super)
+    global bot
+    def multithreading_youtube(self):
+        self.multithreading1=Thread(target=on_youtube)
+        self.multithreading1.start()
+    def multithreading_facebook(self):
+        self.multithreading2=Thread(target=on_facebook)
+        self.multithreading2.start()
+    def multithreading_google_translate(self):
+        self.multithreading3=Thread(target=on_google_translate)
+        self.multithreading3.start()
+    def multithreading_github(self):
+        self.multithreading4=Thread(target=on_github)
+        self.multithreading4.start()
 object = Class_multithreading()
+print(type(object))
 
 #setting time in tool (thiết lập thời gian trong tool) 
 def new_time():
     time_string = strftime("Time : %H:%M:%S %p") # time format (định dạng thời gian)
+    #print(time_string)
     label_time.config(text = time_string)
     label_time.after(1000, new_time) # time delay of 1000 milliseconds (thời gian dừng khoảng 1000 mili giây)
 def on_youtube():
     bot.say("turn on youtube")# bot said 
     if bot.runAndWait() == print(Fore.RED + "", file=stream):# print text color (in chữ màu)
         tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
-        print("tool running please wait !\n"*1000)
+        #print("tool running please wait !\n"*1000)
         tuong.set_window_size(750,700) == tuong.get("https://www.youtube.com/watch?v=sX1Y2JMK6g8")
 def on_facebook():
     bot.say("turn on facebook")
@@ -76,8 +92,8 @@ def on_github():
     if sleep(3)== print("coming profile"):
         tuong.get("https://github.com/tuongclearlove7")
 
-#setting time and my name (thiết lập thời gian và tên của tôi)
-# I will become a Software Developer (tôi sẽ trở thành một nhà phát triển phần mềm trong tương lai)
+    #setting time and my name (thiết lập thời gian và tên của tôi)
+    # I will become a Software Developer (tôi sẽ trở thành một nhà phát triển phần mềm trong tương lai)
 my_font=('fantasy',10,'bold')
 label_time=tk.Label(tool,font=my_font, bg="#099D9D",fg="black")
 label_time.grid(row=0,column=0,padx=5,pady=25)
@@ -96,25 +112,28 @@ tick.grid(row = 2, column = 0, sticky = W, columnspan = 2)#position tick and pre
 img = PhotoImage(file = "clearlove7.png")# set image (thiết lập ảnh)
 img1 = img.subsample(2, 3)
 # setting image with the help of label (thiết lập ảnh đc trợ giúp bởi label : nhãn)
-Label(tool, image = img1).grid(row = 0, column = 2,
+Label(tool, image = img1).grid(row = 0, column = 2, 
 columnspan = 2, rowspan = 2, padx = 5, pady = 5)
 # button widget (tiện ích nút)
-b1 = Button(tool, text= "Youtube", bg="red", width = 7, command = object.multithreading_youtube)# set button (thiết lập nút
-b2 = Button(tool, text= "Facebook",bg="blue", width = 7, command=object.multithreading_facebook)
-b3 = Button(tool, text = "Google translate", bg="white", width = 13, command=object.multithreading_google_translate )
-b4 = Button(tool, text = "Github", bg="#663399", width = 7, command=object.multithreading_github)
+click_bg_button_Y = "#FF6666" # click button color
+click_bg_button_F = "#3399FF"
+click_bg_button_GG = "silver"
+click_bg_button_Git = "#CC3399"
+b1 = Button(tool, text= "Youtube", bg="red", activebackground=click_bg_button_Y, width = 7, command =object.multithreading_youtube)# set button (thiết lập nút
+b2 = Button(tool, text= "Facebook",bg="blue",activebackground=click_bg_button_F, width = 7, command=object.multithreading_facebook)
+b3 = Button(tool, text = "Google translate",bg="white",activebackground=click_bg_button_GG, width = 13, command=object.multithreading_google_translate)
+b4 = Button(tool, text = "Github", bg="#663399",activebackground=click_bg_button_Git ,width = 7, command=object.multithreading_github)
 b1.grid(row = 2, column = 1)#potision button(vị trí nút)
 b2.grid(row = 2, column = 2)
 b3.grid(row = 2, column = 3)
 b4.grid(row = 2, column = 4)
-# infinite loop which can be terminated (mainloop) (vòng lặp vô hạn có thể được kết thúc bởi mainloop())
-# the tool will by keyboard or mouse interrupt(tool sẽ bị ngắt bằng bàn phím điều khiển hoặc chuột)
+ # infinite loop which can be terminated (mainloop) (vòng lặp vô hạn có thể được kết thúc bởi mainloop())
+ # the tool will by keyboard or mouse interrupt(tool sẽ bị ngắt bằng bàn phím điều khiển hoặc chuột)
 new_time()
 tool.update()
 tool.mainloop()
-import tuongpy
-sys.exit("end tool")
-
+#import hack_log
+sys.exit("end tool")  
 
 
 
