@@ -13,19 +13,18 @@ import pyttsx3
 import tkinter as tk 
 from time import strftime
 from threading import *
+import pygame
 
-app = Tk()
-
-app.mainloop()
-
+#class main():
 init(wrap=False)
 stream = AnsiToWin32(sys.stderr).stream # text color
-bot = pyttsx3.init() 
+pygame.init()
+bot = pyttsx3.init()
 voices = bot.getProperty('voices') # information about voices (thông tin về giọng nói)
 bot.setProperty('voice', voices[1].id) #female voice id 1 (giọng nữ id là 1)
 
 tool = Tk()
-tool.geometry("550x220")# set screen (thiết lập khung tool)
+tool.geometry("560x220")# set screen (thiết lập khung tool)
 # this will create a label widget (tạo tiện ích label : nhãn)
 tool.iconbitmap('clearlove7.ico') # set icon
 tool.title("My Software")# set title
@@ -33,15 +32,10 @@ tool.configure(background="#099D9D") # set background
 # grid method to arrange labels in respective (phương pháp lưới để sắp xếp các nhãn)
 # rows and columns as specified  (tương ứng hàng và cột như đã chỉ định)
 
-
-#key = 'tuong'
-#print({'tuong': lambda: (type(init))} [key]())
-
 class Class_multithreading: # class multithreading (lớp đa luồng)
     def __init__(self):
             super().__init__()
             print(self,super)
-    global bot
     def multithreading_youtube(self):
         self.multithreading1=Thread(target=on_youtube)
         self.multithreading1.start()
@@ -54,10 +48,22 @@ class Class_multithreading: # class multithreading (lớp đa luồng)
     def multithreading_github(self):
         self.multithreading4=Thread(target=on_github)
         self.multithreading4.start()
+    def multithreading_sound(self):
+        self.multithreading_S=Thread(target=play_sound)
+        self.multithreading_S.start() #multi()
 object = Class_multithreading()
 print(type(object))
 
-#setting time in tool (thiết lập thời gian trong tool) 
+#setting sound and time in tool (thiết lập thời gian trong tool) 
+def multithreading_game():
+    multithreading_game7=Thread(target=play_game)
+    multithreading_game7.start()
+def play_game():
+    import game7
+    pass
+def play_sound():
+    pygame.mixer.music.load("tuong.mp3") #Loading File Into Mixer
+    pygame.mixer.music.play() #Playing It In The Whole Device
 def new_time():
     time_string = strftime("Time : %H:%M:%S %p") # time format (định dạng thời gian)
     #print(time_string)
@@ -79,6 +85,11 @@ def on_google_translate():
     if bot.runAndWait() == print(Fore.WHITE + "", file=stream):
         tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
         tuong.get("https://www.google.com/search?q=gg+d%E1%BB%8Bch&oq=gg&aqs=chrome.0.69i59j69i57j0i131i433i512l2j0i433i512j0i131i433i512l2j69i60.2320j0j7&sourceid=chrome&ie=UTF-8")
+    if sleep(2) == print("text translate"):
+        file_object = open('clearlove7_developer_tool.txt')
+        data_text = file_object.read()
+        tuong.find_element_by_id("tw-source-text-ta").send_keys(data_text)
+        tuong.execute_script("window.scroll(0,240)")
 def on_github():
     bot.say("turn on github")
     if bot.runAndWait() == print(Fore.MAGENTA + "", file=stream):
@@ -123,17 +134,20 @@ b1 = Button(tool, text= "Youtube", bg="red", activebackground=click_bg_button_Y,
 b2 = Button(tool, text= "Facebook",bg="blue",activebackground=click_bg_button_F, width = 7, command=object.multithreading_facebook)
 b3 = Button(tool, text = "Google translate",bg="white",activebackground=click_bg_button_GG, width = 13, command=object.multithreading_google_translate)
 b4 = Button(tool, text = "Github", bg="#663399",activebackground=click_bg_button_Git ,width = 7, command=object.multithreading_github)
+button_sound = Button(tool,text="introduce",bg="#006699",activebackground="#99CCFF",command=object.multithreading_sound)
+button_game = Button(tool,text="play game",bg="#FF6600",activebackground="#99CCFF",width = 8 ,command=multithreading_game)
+
 b1.grid(row = 2, column = 1)#potision button(vị trí nút)
 b2.grid(row = 2, column = 2)
 b3.grid(row = 2, column = 3)
 b4.grid(row = 2, column = 4)
+button_sound.grid(row=1, column=1)
+button_game.grid(row=1,column=1, sticky=S)
  # infinite loop which can be terminated (mainloop) (vòng lặp vô hạn có thể được kết thúc bởi mainloop())
  # the tool will by keyboard or mouse interrupt(tool sẽ bị ngắt bằng bàn phím điều khiển hoặc chuột)
 new_time()
-tool.update()
 tool.mainloop()
 #import hack_log
-sys.exit("end tool")  
-
+sys.exit("end tool")
 
 
