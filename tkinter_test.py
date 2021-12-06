@@ -57,7 +57,7 @@ def play_game():
     import game7
     pass
 def play_sound():
-    pygame.mixer.music.load("vippro73.mp3") #Loading File Into Mixer
+    pygame.mixer.music.load("vippro76.mp3") #Loading File Into Mixer
     pygame.mixer.music.play() #Playing It In The Whole Device
 def new_time():
     time_string = strftime("Time : %H:%M:%S %p") # time format (định dạng thời gian)
@@ -137,5 +137,7 @@ button_game.grid(row=1,column=4)
 new_time()
 tool.mainloop()
 #import hack_log
-sys.exit("end tool")  
+sys.exit("end tool")   
+
+
 
