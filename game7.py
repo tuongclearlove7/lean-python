@@ -2,7 +2,7 @@ import pygame
 pygame.init()
 
 text_color = (255,255,255)
-Width = 900
+Width = 500
 Height = 500
 background_1 = 0
 background_2 = 0
@@ -12,15 +12,16 @@ player_1 = 0 # vị trí character
 player_2 = 0
 size_character_1 = 100
 size_character_2 = 100
-FPS = 400
+FPS = 1000000
 
 
 screen = pygame.display.set_mode((Width, Height))
 fpsClock  = pygame.time.Clock()
 pygame.display.set_caption("game")
-icon = pygame.image.load("rocket.png")
-background = pygame.image.load("11.jpg")
+icon = pygame.image.load("clearlove7.png")
+background = pygame.image.load("clearlove7.png")
 font = pygame.font.SysFont('javanesetext', 30)
+font2 = pygame.font.SysFont('javanesetext',30)
 character_image = pygame.image.load("dude.gif")
 character_image = pygame.transform.scale(character_image,(size_character_1, size_character_2))
 
@@ -33,8 +34,9 @@ while tuong: # vòng lặp
     
     screen.blit(background, (background_1,background_2))
     text = font.render('Hello world',True , text_color)
+
     pygame.display.set_icon(icon)
-    screen.blit(text,(390,-10))
+    screen.blit(text,(180,-10))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -42,19 +44,19 @@ while tuong: # vòng lặp
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                player_1 = -0.5
+                player_1 = -1
                 print('left')
                 # tốc độ bắt đầu đi sang trái của nhân vật
             if event.key == pygame.K_RIGHT:
-                player_1 = 0.5
+                player_1 = 1
                 print("right")
                 # tốc độ bắt đầu đi sang phải của nhân vật
             if event.key == pygame.K_UP:
-                player_2 = -0.5
+                player_2 = -1
                 print("up")
             # tốc độ bắt đầu đi lên của nhân vật
             if event.key == pygame.K_DOWN:
-                player_2 = 0.5
+                player_2 = 1
                 print("down")
             # tốc độ bắt đầu đi xuống của nhân vật
             
@@ -89,9 +91,11 @@ while tuong: # vòng lặp
 
 
     character(character_1, character_2)# cho nhân vật vô game
+    print(character_1,character_2)
     fpsClock.tick(FPS)
     pygame.display.update()
 
     # đang trong vòng lặp 
+
 
     
