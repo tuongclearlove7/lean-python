@@ -15,19 +15,18 @@ class tool:
         #loop = int(input("input integer create account : "))
         try:
             loop = int(input("input integer create account : "))
-            time  = int(input("input integer time each time off : "))
+            time  = int(input("input integer time each time off : "))   
+            for tuong in range(loop):
+                bot.say("create account")
+                bot.say(tuong)
+                bot.runAndWait()
+                print(tuong)
+                tool.web1()
         except:
-            bot_said = "you are input wrong format "
+            bot_said = "you were inputing wrong format "
             print(bot_said)
             bot.say(bot_said)
-            bot.runAndWait()
-        for tuong in range(loop):
-            bot.say("create account")
-            bot.say(tuong)
-            bot.runAndWait()
-            print(tuong)
-            tool.web1()
-            pass
+            bot.runAndWait()  
         
     def web1():
         #num = int(input("input integer create account : "))
@@ -51,9 +50,11 @@ class tool:
             tuong.find_element_by_name("websubmit").click()
             tuong.find_element_by_name("birthday_age").send_keys("22")
             tuong.find_element_by_name("websubmit").click()
-            sleep(time)
+            if sleep(time) == bot.say("exit"):
+                bot.runAndWait()
             break
 tool.handle()
+    
 
 
 
