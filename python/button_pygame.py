@@ -5,7 +5,7 @@ pygame.init()
 background_x=0
 background_y=0
 screen = pygame.display.set_mode((500,500))
-pygame.display.set_caption("tool")
+pygame.display.set_caption("Tool")
 program_Icon = pygame.image.load('tuongclearlove7.png')
 pygame.display.set_icon(program_Icon)
 star_image = pygame.image.load("start.png").convert_alpha()
@@ -44,26 +44,25 @@ class button(): # lớp nút
         return action
 
 
-    
+def on_turn():
+        import tool_facebook2
 def multithreading_tool():
         multithreading1=Thread(target=on_turn)
         multithreading1.start()
-def on_turn():
-        import tool_facebook2
+        
 
 star_button = button(80,200, star_image, 0.5)
 exit_button = button(300,200, exit_image, 0.5)
 
 tuong = True
 while tuong:
+
         screen.fill((255,255,255))
         background(background_x,background_y)
-
-        
         if star_button.draw():
             print("start")
             multithreading_tool()
-            
+                
         if exit_button.draw():
             tuong = False
             print("exit")

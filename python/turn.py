@@ -1,8 +1,7 @@
-try:
-    loop = int(input("nhap : "))
-    time = int(input("nhap : "))
-except:
-    print("dinh dang k hop le")
+name = (161,'tuong')
+for Text in name:
+    print('text :', Text)
+    
 
 
 

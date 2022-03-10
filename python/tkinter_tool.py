@@ -1,4 +1,6 @@
+from ast import Lambda
 from os import pipe
+from re import A
 import threading
 from time import sleep
 from tkinter import *
@@ -7,6 +9,7 @@ from tkinter import font
 from colorama.ansi import BEL
 from colorama import Fore
 from colorama import init, AnsiToWin32
+from pkg_resources import yield_lines
 from selenium import webdriver
 import os , sys
 import pyttsx3
@@ -27,8 +30,10 @@ tool.geometry("560x220")# set screen (thiết lập khung tool)
 tool.iconbitmap('tuongclearlove7.ico') # set icon
 tool.title("My Software")# set title
 tool.configure(background="#099D9D") # set background
+
 # grid method to arrange labels in respective (phương pháp lưới để sắp xếp các nhãn)
 # rows and columns as specified  (tương ứng hàng và cột như đã chỉ định)
+
 class Class_multithreading: # class multithreading (lớp đa luồng)
     def __init__(self):
             super().__init__()
@@ -37,7 +42,7 @@ class Class_multithreading: # class multithreading (lớp đa luồng)
         self.multithreading1=Thread(target=on_youtube)
         self.multithreading1.start()
     def multithreading_facebook(self):
-        self.multithreading2=Thread(target=on_facebook)
+        self.multithreading2=Thread(target=on_tool)
         self.multithreading2.start()
     def multithreading_google_translate(self):
         self.multithreading3=Thread(target=on_google_translate)
@@ -48,14 +53,117 @@ class Class_multithreading: # class multithreading (lớp đa luồng)
     def multithreading_sound(self):
         self.multithreading_S=Thread(target=play_sound)
         self.multithreading_S.start()
+    def multithreading_game(self):
+        self.multithreading_game7=Thread(target=play_game)
+        self.multithreading_game7.start()
 object = Class_multithreading()
 #setting sound and time in tool (thiết lập thời gian trong tool) 
-def multithreading_game():
-    multithreading_game7=Thread(target=play_game)
-    multithreading_game7.start()
-def play_game():
-    import game7
-    pass
+class myGame():
+    def gamecl():
+            import pygame
+            pygame.init()
+
+            text_color = (255,255,255)
+            Width = 500
+            Height = 500
+            background_1 = 0
+            background_2 = 0
+            character_1 = 400
+            character_2 = 200
+            player_1 = 0 # vị trí character
+            player_2 = 0
+            size_character_1 = 100
+            size_character_2 = 100
+            FPS = 1000000
+
+
+            screen = pygame.display.set_mode((Width, Height))
+            fpsClock  = pygame.time.Clock()
+            icon = pygame.image.load("tuongclearlove7.jpg")
+            background = pygame.image.load("tuongclearlove7.png")
+            font = pygame.font.SysFont('javanesetext', 30)
+            font2 = pygame.font.SysFont('javanesetext',30)
+
+            pygame.display.set_caption("game")
+            character_image = pygame.image.load("dude.gif")
+            character_image = pygame.transform.scale(character_image,(size_character_1, size_character_2))
+
+            def character(x, y): # tạo hàm character để thêm nhân vật vào game 
+                screen.blit(character_image, (x, y)) # được truyền vào biến x, y
+
+            tuong = True
+
+            while tuong: # vòng lặp 
+                
+                screen.blit(background, (background_1,background_2))
+                text = font.render('Hello world',True , text_color)
+
+                pygame.display.set_icon(icon)
+                screen.blit(text,(180,-10))
+
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        tuong = False
+
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_LEFT:
+                            player_1 = -1
+                            print('left')
+                            # tốc độ bắt đầu đi sang trái của nhân vật
+                        if event.key == pygame.K_RIGHT:
+                            player_1 = 1
+                            print("right")
+                            # tốc độ bắt đầu đi sang phải của nhân vật
+                        if event.key == pygame.K_UP:
+                            player_2 = -1
+                            print("up")
+                        # tốc độ bắt đầu đi lên của nhân vật
+                        if event.key == pygame.K_DOWN:
+                            player_2 = 1
+                            print("down")
+                        # tốc độ bắt đầu đi xuống của nhân vật
+                        
+
+                    if event.type == pygame.KEYUP: # xác định vị trí muốn dừng của tên lửa
+                        if event.key == pygame.K_LEFT:
+                            player_1 = 0
+                        if event.key == pygame.K_RIGHT:
+                            player_1 = 0
+                        if event.key == pygame.K_DOWN:
+                            player_2 = 0
+                        if event.key == pygame.K_UP:
+                            player_2 = 0
+                        
+
+                character_1 += player_1
+                if character_1 <= -12:
+                    character_1 = -12
+            #vị trí lề trái game mà nhân vật đi tới và đứng lại
+                elif character_1 >= 840:
+                    character_1 = 840
+            #vị trí lề phải game mà nhân vật đi tới và đứng lại
+
+                character_2 += player_2
+                if character_2 <= -15:
+                    character_2 = -15
+            #vị trí lề trên game mà nhân vật đi tới và đứng lại
+                elif character_2 >= 415:
+                    character_2 = 415
+            #vị trí lề dưới game mà nhân vật đi tới và đứng lại
+
+                character(character_1, character_2)# cho nhân vật vô game
+                print(character_1,character_2)
+                fpsClock.tick(FPS)
+                pygame.display.update()
+                break
+                
+def play_game():    
+    number = int(input("loop game : "))
+    global a
+    a = myGame.gamecl()    
+    for a in range(number):
+        myGame.gamecl()
+        break
 def play_sound():
     pygame.mixer.music.load("vippro76.mp3") #Loading File Into Mixer
     pygame.mixer.music.play() #Playing It In The Whole Device
@@ -68,6 +176,59 @@ def on_google_translate():
     tuong.get("https://www.google.com/search?q=gg+d%E1%BB%8Bch&oq=gg&aqs=chrome.0.69i59j69i57j0i131i433i512l2j0i433i512j0i131i433i512l2j69i60.2320j0j7&sourceid=chrome&ie=UTF-8")
     tuong.find_element_by_id("tw-source-text-ta").send_keys("hello world")
     tuong.execute_script("window.scroll(0,240)")
+
+class tool_face:
+    def handle():
+        global tuong
+        global time
+        global loop
+        #loop = int(input("input integer create account : "))
+        try:
+            loop = int(input("input integer create account : "))
+            time  = int(input("input integer time each time off : "))   
+            for tuong in range(loop):
+                bot.say("create account")
+                bot.say(tuong)
+                bot.runAndWait()
+                print(tuong)
+                tool_face.web1()
+        except:
+            bot_said = "you were inputing wrong format "
+            print(bot_said)
+            bot.say(bot_said)
+            bot.runAndWait()  
+        
+    def web1():
+        #num = int(input("input integer create account : "))
+        #time  = int(input("input integer time each time off : "))
+        while True:
+            tuong = webdriver.Chrome(executable_path=r"D:\python\chromedriver.exe")
+            tuong.set_window_size(1000,1000)
+            tuong.get("https://www.facebook.com/campaign/landing.php?campaign_id=1661697991&extra_1=s%7Cc%7C432702091386%7Cb%7C%C4%91%C4%83ng%20ky%CC%81%20facebook%7C&placement=&creative=432702091386&keyword=%C4%91%C4%83ng%20ky%CC%81%20facebook&partner_id=googlesem&extra_2=campaignid%3D1661697991%26adgroupid%3D65157403438%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-369935470948%26loc_physical_ms%3D9047170%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMInK-f1ouz9gIV0m4qCh3s3Q27EAAYASAAEgLRovD_BwE") 
+            tuong.find_element_by_name("lastname").send_keys(" trần")
+            tuong.find_element_by_name("firstname").send_keys("tường")
+            tuong.find_element_by_name("reg_email__").send_keys("thetuongyt@gmail.com")
+            sleep(2)
+            tuong.find_element_by_name("reg_email_confirmation__").send_keys("thetuongyt@gmail.com")
+            tuong.find_element_by_id("password_step_input").send_keys("tuongyeuthao")
+            tuong.find_element_by_name("birthday_day").click()
+            tuong.find_element_by_name("birthday_month").click()
+            tuong.find_element_by_name("birthday_year").click()
+            tuong.find_element_by_name("sex").click()
+            sleep(2)
+            tuong.find_element_by_name("websubmit").click()
+            tuong.find_element_by_name("websubmit").click()
+            tuong.find_element_by_name("birthday_age").send_keys("22")
+            tuong.find_element_by_name("websubmit").click()
+            if sleep(time) == bot.say("exit"):
+                bot.runAndWait()
+            break
+
+def on_tool():
+    while True:
+        print("loop")
+        tool_face.handle()
+        break
 #setting time and my name (thiết lập thời gian và tên của tôi)
 # I will become a Software Developer (tôi sẽ trở thành một nhà phát triển phần mềm trong tương lai)
 my_font=('fantasy',10,'bold')
@@ -98,7 +259,7 @@ b2 = Button(tool, text= "Facebook",bg="blue",activebackground=click_bg_button_F,
 b3 = Button(tool, text = "Google translate",bg="white",activebackground=click_bg_button_GG, width = 13, command=object.multithreading_google_translate)
 b4 = Button(tool, text = "Github", bg="#663399",activebackground=click_bg_button_Git ,width = 7, command=object.multithreading_github)
 button_sound = Button(tool,text="introduce",bg="#006699",activebackground="#99CCFF",command=object.multithreading_sound)
-button_game = Button(tool,text="play game",bg="#3366CC",activebackground="#99CCFF",width = 8 ,command=multithreading_game)
+button_game = Button(tool,text="play game",bg="#3366CC",activebackground="#99CCFF",width = 8 ,command=object.multithreading_game)
 b1.grid(row = 2, column = 1)#potision button(vị trí nút)
 b2.grid(row = 2, column = 2)
 b3.grid(row = 2, column = 3)
