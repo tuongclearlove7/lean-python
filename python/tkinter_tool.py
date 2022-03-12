@@ -1,6 +1,7 @@
 from array import array
-from email import charset
+from email import charset, message
 from os import pipe
+from re import T
 from time import sleep
 from tkinter import *
 from tkinter import messagebox
@@ -14,17 +15,22 @@ import pyttsx3
 import tkinter as tk 
 from time import strftime
 from threading import *
+import base64
 import pygame
 
 def passkey():
     while True:
         while True:
-                password = tuple(input("input : "))
-                key = tuple("tuongyeuthao")
-                if password == key:
+                password = input("nhap pass : ")
+                my_password = "tuongyeuthao1"
+                key_encode = my_password.encode('ascii')
+                byte64 = base64.b64encode(key_encode)
+                log_decode = byte64.decode('ascii')
+                if password == log_decode:
+                    print("log decode :  ",log_decode)
                     print("you were inputing correct password ")
                     Mytool()
-                if password != key:
+                elif password != log_decode:
                     print("you were inputing wrong password")
                     print("please! re-enter ")
                     break
