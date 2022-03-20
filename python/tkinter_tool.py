@@ -1,7 +1,5 @@
-from array import array
-from email import charset, message
 from os import pipe
-from re import T
+from this import s
 from time import sleep
 from tkinter import *
 from tkinter import messagebox
@@ -17,34 +15,50 @@ from time import strftime
 from threading import *
 import base64
 import pygame
+import undetected_chromedriver.v2 as uc 
 
-def passkey():
+
+def open_tool():
     while True:
         while True:
+                file_object = open("clearlove7_developer_tool.txt")
+                data = file_object.read()
                 password = input("nhap pass : ")
-                my_password = "tuongyeuthao1"
-                key_encode = my_password.encode('ascii')
-                byte64 = base64.b64encode(key_encode)
-                log_decode = byte64.decode('ascii')
-                if password == log_decode:
-                    print("log decode :  ",log_decode)
+                my_password = (data)
+                key_encode = my_password.encode("ascii")
+                encode_base64 = base64.b64encode(key_encode)
+                log_encode = encode_base64.decode("ascii")
+                decode_base64 = (log_encode)
+                encode_bytes = decode_base64.encode("ascii")
+                decode_bytes = base64.b64decode(encode_bytes)
+                log_decode = decode_bytes.decode("ascii")
+                list_pass = []
+                list_pass.append(password)
+                if password == log_encode:
                     print("you were inputing correct password ")
+                    print(list_pass)
+                    print("decode : ",log_decode)
                     Mytool()
-                elif password != log_decode:
-                    print("you were inputing wrong password")
-                    print("please! re-enter ")
+                elif password == log_decode:
+                    print("you were inputing correct password ")
+                    print(list_pass)
+                    print("encode : ", log_encode)
+                    Mytool()
+                elif password != log_encode or log_decode:
+                    print("you were inputing wrong password, please! re-enter")
+                    print(list_pass)
                     break
 def Mytool():
     init(wrap=False)
     stream = AnsiToWin32(sys.stderr).stream # text color
     pygame.init()
     bot = pyttsx3.init()
-    voices = bot.getProperty('voices') # information about voices (thông tin về giọng nói)
-    bot.setProperty('voice', voices[1].id) #female voice id 1 (giọng nữ id là 1)
+    voices = bot.getProperty("voices") # information about voices (thông tin về giọng nói)
+    bot.setProperty("voice", voices[1].id) #female voice id 1 (giọng nữ id là 1)
     tool = Tk()
     tool.geometry("560x220")# set screen (thiết lập khung tool)
     # this will create a label widget (tạo tiện ích label : nhãn)
-    tool.iconbitmap('tuongclearlove7.ico') # set icon
+    tool.iconbitmap("tuongclearlove7.ico") # set icon
     tool.title("My Software")# set title
     tool.configure(background="#099D9D") # set background
 
@@ -58,7 +72,7 @@ def Mytool():
             self.multithreading1=Thread(target=on_youtube)
             self.multithreading1.start()
         def multithreading_facebook(self):
-            self.multithreading2=Thread(target=on_tool)
+            self.multithreading2=Thread(target=multi_tool)
             self.multithreading2.start()
         def multithreading_google_translate(self):
             self.multithreading3=Thread(target=on_google_translate)
@@ -97,8 +111,8 @@ def Mytool():
                 fpsClock  = pygame.time.Clock()
                 icon = pygame.image.load("tuongclearlove7.jpg")
                 background = pygame.image.load("tuongclearlove7.png")
-                font = pygame.font.SysFont('javanesetext', 30)
-                font2 = pygame.font.SysFont('javanesetext',30)
+                font = pygame.font.SysFont("javanesetext", 30)
+                font2 = pygame.font.SysFont("javanesetext",30)
 
                 pygame.display.set_caption("game")
                 character_image = pygame.image.load("dude.gif")
@@ -110,9 +124,9 @@ def Mytool():
                 tuong = True
 
                 while tuong: # vòng lặp 
-                    
+                
                     screen.blit(background, (background_1,background_2))
-                    text = font.render('Hello world',True , text_color)
+                    text = font.render("Hello world",True , text_color)
 
                     pygame.display.set_icon(icon)
                     screen.blit(text,(180,-10))
@@ -124,7 +138,7 @@ def Mytool():
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_LEFT:
                                 player_1 = -1
-                                print('left')
+                                print("left")
                                 # tốc độ bắt đầu đi sang trái của nhân vật
                             if event.key == pygame.K_RIGHT:
                                 player_1 = 1
@@ -207,46 +221,35 @@ def Mytool():
                     print(val)
                     bot.say("create account")
                     bot.runAndWait()
-                    tool_face.web1()
+                    tool_face.open_sign_in_facebook()
             except ValueError:
                 bot_said = "you were inputing wrong format "
                 print(bot_said)
                 bot.say(bot_said)
                 bot.runAndWait()
             
-        def web1():
+        def open_sign_in_facebook():
             #num = int(input("input integer create account : "))
             #time  = int(input("input integer time each time off : "))
             while True:
-                tuong = webdriver.Chrome(executable_path=r"D:\python\chromedriver.exe")
+                tuong = webdriver.Chrome(executable_path=r"C:\Users\clearlove7\Documents\GitHub\clearlove7.github.io\python\chromedriver.exe")
                 tuong.set_window_size(1000,1000)
-                tuong.get("https://www.facebook.com/campaign/landing.php?campaign_id=1661697991&extra_1=s%7Cc%7C432702091386%7Cb%7C%C4%91%C4%83ng%20ky%CC%81%20facebook%7C&placement=&creative=432702091386&keyword=%C4%91%C4%83ng%20ky%CC%81%20facebook&partner_id=googlesem&extra_2=campaignid%3D1661697991%26adgroupid%3D65157403438%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-369935470948%26loc_physical_ms%3D9047170%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMInK-f1ouz9gIV0m4qCh3s3Q27EAAYASAAEgLRovD_BwE") 
-                tuong.find_element_by_name("lastname").send_keys(" trần")
-                tuong.find_element_by_name("firstname").send_keys("tường")
-                tuong.find_element_by_name("reg_email__").send_keys("thetuongyt@gmail.com")
-                sleep(2)
-                tuong.find_element_by_name("reg_email_confirmation__").send_keys("thetuongyt@gmail.com")
-                tuong.find_element_by_id("password_step_input").send_keys("tuongyeuthao")
-                tuong.find_element_by_name("birthday_day").click()
-                tuong.find_element_by_name("birthday_month").click()
-                tuong.find_element_by_name("birthday_year").click()
-                tuong.find_element_by_name("sex").click()
-                sleep(2)
-                tuong.find_element_by_name("websubmit").click()
-                tuong.find_element_by_name("websubmit").click()
-                tuong.find_element_by_name("birthday_age").send_keys("22")
-                tuong.find_element_by_name("websubmit").click()
-                if sleep(time) == bot.say("exit"):
-                    bot.runAndWait()
+                tuong.get("https://www.facebook.com/?stype=lo&jlou=Aff7JnDi0NnTyRw1O4bzTPFla2y5vwyu_1Pth5jKcAgxolpMF8Ljc3-gUoEwXEUVsX1BHFwBj3OE8feSNWwn3DGoHIYkQeOCao2hFmhRY1rSNg&smuh=21084&lh=Ac-BBTh9WPHolxyd_Jw") 
+                tuong.set_window_size(1000,1000)
+                tuong.get("https://www.facebook.com/login")
+                tuong.find_element_by_id("email").send_keys("lol00sever@gmail.com")
+                tuong.find_element_by_id("pass").send_keys("tuongyeubame")
+                tuong.find_element_by_name("login").click()
+                sleep(time)
                 break
 
-    def on_tool():
+    def multi_tool():
         while True:
             tool_face.handle()
             break
     #setting time and my name (thiết lập thời gian và tên của tôi)
     # I will become a Software Developer (tôi sẽ trở thành một nhà phát triển phần mềm trong tương lai)
-    my_font=('fantasy',10,'bold')
+    my_font=("fantasy",10,"bold")
     label_time=tk.Label(tool,font=my_font, bg="#099D9D",fg="black")
     label_time.grid(row=0,column=0,padx=5,pady=25)
     name_dev = "By Clearlove7 Developer"
@@ -286,7 +289,7 @@ def Mytool():
     new_time()
     tool.mainloop()
     sys.exit("end tool") 
-passkey()
+open_tool()
 
 
 
