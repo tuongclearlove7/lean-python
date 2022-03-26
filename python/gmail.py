@@ -1,38 +1,42 @@
-from lib2to3.pgen2.driver import Driver
-from multiprocessing.connection import wait
-from this import d
-from time import sleep
+import json,requests,time,os,sys
+from time import strftime
 from selenium import webdriver
-import undetected_chromedriver.v2 as uc 
-# class Login_Gmail():
-#     def On_Gmail():
-#         Gmail = uc.Chrome(executable_path=r"D:\python\chromedriver.exe")
-#         Gmail.set_window_size(1000,1000)
-#         Gmail.get("https://accounts.google.com/AddSession/identifier?hl=vi&continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3D%25C4%2591%25C4%2583ng%2Bnh%25E1%25BA%25ADp%2Bgmail%26oq%3D%25C4%2591%25C4%2583ng%26aqs%3Dchrome.1.69i57j0i433i512l2j0i131i433i512j0i433i512j69i60j69i61j69i60.3520j0j7%26sourceid%3Dchrome%26ie%3DUTF-8&ec=GAlAAQ&flowName=GlifWebSignIn&flowEntry=AddSession")
-#         Gmail.find_element_by_id("identifierId").send_keys("lol00sever@gmail.com")
-#         sleep(2)    
-#         Gmail.find_element_by_xpath("//*[@id='identifierNext']").click()
-#         sleep(2)
-#         Gmail.find_element_by_id("next").click()
-#         sleep(2)
-#         Gmail.find_element_by_id("password").send_keys("")
-#         sleep(2)
-#         Gmail.find_element_by_name("passwordNext").click()
-# Looptions = webdriver.ChromeOptions()
-class tool():
-        def on_web():
-            while True:
-                global driver
-                driver =  uc.Chrome()
-                driver.get("https://accounts.google.com/AddSession/identifier?hl=vi&continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3D%25C4%2591%25C4%2583ng%2Bnh%25E1%25BA%25ADp%2Bgmail%26oq%3D%25C4%2591%25C4%2583ng%26aqs%3Dchrome.1.69i57j0i433i512l2j0i131i433i512j0i433i512j69i60j69i61j69i60.3520j0j7%26sourceid%3Dchrome%26ie%3DUTF-8&ec=GAlAAQ&flowName=GlifWebSignIn&flowEntry=AddSession")
-            
-                if driver.find_element_by_id("identifierId").send_keys("lol00sever@gmail.com")==driver.find_element_by_xpath("//*[@id='identifierNext']").click():
-                    driver.find_element_by_id("password").send_keys("12343211234321")
-                    driver.find_element_by_name("passwordNext").click() 
-                break;      
-tool.on_web()
-# ok nhá bạn có thể để độ trễ cao hơn cho nó load  #
-# đợi e test cho nó đc luôn đk bác )):đc
+#from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+import selenium.webdriver.support.ui as ui
+import selenium.webdriver as webdriver
+from selenium.webdriver.common.keys import Keys 
+import undetected_chromedriver.v2 as uc
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from time import sleep
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from pyvirtualdisplay import Display
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 
+if __name__ == "__main__":
+        driver = uc.Chrome()
+        link = f'https://www.google.com'
+        driver.get(link)
+        driver.get('https://google.com')
+        driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
+        sleep(1)
+        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input').send_keys('lol00sever@gmail.com')
+        sleep(1)
+        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span').click() 
+        sleep(1)
+        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input').send_keys('12343211234321')
+        sleep(1)
+        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span').click()
+        sleep(2)
+        driver.get('https://www.youtube.com/watch?v=78nhuJ9E1es&t=1s')
+        sleep(10)
 

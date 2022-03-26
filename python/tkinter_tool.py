@@ -1,6 +1,6 @@
 from os import pipe
 from this import s
-from time import sleep
+import time
 from tkinter import *
 from tkinter import messagebox
 from tkinter import font
@@ -17,6 +17,21 @@ import base64
 import pygame
 import undetected_chromedriver.v2 as uc 
 
+import json,requests,time,os,sys
+from time import strftime
+from selenium import webdriver
+#from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+import selenium.webdriver.support.ui as ui
+import selenium.webdriver as webdriver
+from selenium.webdriver.common.keys import Keys 
+import undetected_chromedriver.v2 as uc
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from time import sleep
 
 def open_tool():
     while True:
@@ -209,12 +224,12 @@ def Mytool():
 
     class tool_face:
         def handle():
-            global time
+            global tim3
             global loop
             global tuong
             try:
                 loop = int(input("input integer create account : "))
-                time  = int(input("input integer time each time off : "))
+                tim3  = int(input("input integer time each time off : "))
                 for tuong in range(loop):
                     val = int(loop)
                     print("number of loop : ")
@@ -232,15 +247,23 @@ def Mytool():
             #num = int(input("input integer create account : "))
             #time  = int(input("input integer time each time off : "))
             while True:
-                tuong = webdriver.Chrome(executable_path=r"C:\Users\clearlove7\Documents\GitHub\clearlove7.github.io\python\chromedriver.exe")
-                tuong.set_window_size(1000,1000)
-                tuong.get("https://www.facebook.com/?stype=lo&jlou=Aff7JnDi0NnTyRw1O4bzTPFla2y5vwyu_1Pth5jKcAgxolpMF8Ljc3-gUoEwXEUVsX1BHFwBj3OE8feSNWwn3DGoHIYkQeOCao2hFmhRY1rSNg&smuh=21084&lh=Ac-BBTh9WPHolxyd_Jw") 
-                tuong.set_window_size(1000,1000)
-                tuong.get("https://www.facebook.com/login")
-                tuong.find_element_by_id("email").send_keys("lol00sever@gmail.com")
-                tuong.find_element_by_id("pass").send_keys("tuongyeubame")
-                tuong.find_element_by_name("login").click()
-                sleep(time)
+                if __name__ == "__main__":
+                    driver = uc.Chrome()
+                    link = f'https://www.google.com'
+                    driver.get(link)
+                    driver.get('https://google.com')
+                    driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
+                    sleep(2)
+                    driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input').send_keys('lol00sever@gmail.com')
+                    sleep(2)
+                    driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span').click() 
+                    sleep(2)
+                    driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input').send_keys('12343211234321')
+                    sleep(2)
+                    driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span').click()
+                    sleep(2)
+                    driver.get('https://www.youtube.com/')
+                    sleep(tim3)
                 break
 
     def multi_tool():
