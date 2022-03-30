@@ -53,12 +53,14 @@ def open_tool():
                     print("you were inputing correct password ")
                     print(list_pass)
                     print("decode : ",log_decode)
-                    Mytool()
+                    if Mytool() == quit() or "End Programing":
+                        pass
                 elif password == log_decode:
                     print("you were inputing correct password ")
                     print(list_pass)
                     print("encode : ", log_encode)
-                    Mytool()
+                    if Mytool() == quit() or "End Programing":
+                        pass
                 elif password != log_encode or log_decode:
                     print("you were inputing wrong password, please! re-enter")
                     print(list_pass)

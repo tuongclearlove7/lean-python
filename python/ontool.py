@@ -30,8 +30,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from tkinter import filedialog,Tk
+from PIL import ImageTk,Image
+import pyautogui, pyperclip, random
 from time import sleep
-
 
 init(wrap=False)
 stream = AnsiToWin32(sys.stderr).stream # text color
@@ -40,7 +41,7 @@ bot = pyttsx3.init()
 voices = bot.getProperty("voices") 
 bot.setProperty("voice", voices[1].id) 
 tool = Tk()
-tool.geometry("603x413")
+tool.geometry("840x400")
 tool.iconbitmap("tuongclearlove7.ico")
 tool.title("My Software")# set title
 tool.configure(background="#099D9D")
@@ -56,23 +57,35 @@ def new_time():
     time_string = strftime("Time : %H:%M:%S %p") 
     label_time.config(text = time_string)
     label_time.after(1000, new_time) 
+
+My_str = tk.StringVar()
+My_Label_string = Label(tool,fg="white",textvariable=My_str,
+                        bg="#099D9D").place(x=5,y=250)
+My_str.set("Path here")
+
 def openfile():
+    global My_img,My_Label
+    global My_Label_Image,Filepath
     Filepath = filedialog.askopenfilename(
     initialdir="C:\\Users\\clearlove7\Documents\\GitHub\\clearlove7.github.io\\python",
     title="you are open file",
     filetypes=[
-        ("MKV file",".mkv"),
-        ("PNG file",".png")
+        ("MKV file", ".mkv"),
+        ("PNG file", ".png"),
+        ("All types", "*.*"),
+        ("png files", "*png"),("jng files", "*jng"),
+        ("Text Docs", "*.txt")
     ])
-    file = open(Filepath,"r")
-    print(file.read())
-    file.close()
+    My_Label = Label(tool,fg="white",bg="#099D9D",text=Filepath)
+    My_Label.place(x=0,y=500)
+    My_img = ImageTk.PhotoImage(Image.open(Filepath))
+    My_Label_Image = Label(image=My_img).place(x=20,y=230)
+    My_str.set(Filepath)
 
 class Software():
     def handle():
         global Delay
-        global loop
-        global tuong
+        global loop,tuong
         try:
             loop = int(input("input number integer login google : "))
             Delay  = int(input("input integer time each time off : "))
@@ -136,22 +149,22 @@ color_dev = ("black")
 font_dev = ("fantasy",10,"bold")
 l1 = Label(tool, text = name_dev, font = font_dev, fg = color_dev, bg="#099D9D")
 l1.grid(row = 1, column = 0, sticky = W, pady = 1)
-tick = Checkbutton(tool, text = "Accept", bg="#099D9D",width=5) 
-tick.grid(row = 2, column = 0, sticky = W, columnspan = 2) 
 
-    
-img = PhotoImage(file = "anhyeuthao.png") 
+tick = Checkbutton(tool, text = "Accept", bg="#099D9D",width=5) 
+tick.grid(row = 2, column = 0, sticky = W, columnspan = 2)
+img = PhotoImage(file = "tuongclearlove7.png") 
 my_image = Label(tool, image=img)
-my_image.place(x=200, y=5,width=400 ,height=400)
+my_image.place(x=440, y=0,width=400 ,height=400)
 b2 = Button(tool, text= "Login Google",bg="white",activebackground="#3399FF", width = 15, command=Object.Multiple)
 b2.place(x=70,y=200)
-Button_file = Button(text="open", command=openfile)
+
+
+Button_file = Button(text="Open file", command=openfile)
 Button_file.place(x=10,y=200)
 
 new_time()
 tool.mainloop()
 sys.exit("end tool") 
-
 
 
 
