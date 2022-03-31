@@ -1,6 +1,5 @@
 import base64
 
-
 def MyData():
     class main():
         def __init__(self,name, nickname):
@@ -19,12 +18,11 @@ def MyData():
     print(main.Hi(log))
     print(log.Hi)
 
-    class method():
+    class Class_Method():
         def __init__(self,value,value2) -> None:
             self.method = value
             self.method2 = value2
-
-    console = method("this is method 1 : "+log.Hi()+"\nthis is method 2 :"," hello --  ")
+    console = Class_Method("this is method 1 : "+log.Hi()+"\nthis is method 2 :"," hello --  ")
     print(console.method,console.method2)
     # tương tự class ở trên nhưng class này có sự khác biệt đó là  
     #  gán class log.main() được khởi tạo ở trên cho value và value gán cho method
@@ -34,44 +32,39 @@ def MyData():
         c = a+b
         return c
     total = SUM(a=16,b=9)
-    print(total)  
-
-             
-
+    if __name__ == "__main__":
+        print(total) 
+    print(type(exit)) 
 while True:
-    while True:
-        file_object = open("clearlove7_developer_tool.txt")
-        data = file_object.read()
-        password = input("nhap pass : ")
-        my_password = (data)
-        key_encode = my_password.encode("ascii")
-        encode_base64 = base64.b64encode(key_encode)
-        log_encode = encode_base64.decode("ascii")
-        decode_base64 = (log_encode)
-        encode_bytes = decode_base64.encode("ascii")
-        decode_bytes = base64.b64decode(encode_bytes)
-        log_decode = decode_bytes.decode("ascii")
-        list_pass = []
-        list_pass.append(password)
-        if password == log_encode:
-            print("you were inputing correct password ")
-            print(list_pass)
-            print("decode : ",log_decode)
-            MyData()
-            if MyData()==quit() or "End Programing":
+    file_object = open("clearlove7_developer_tool.txt")
+    data = file_object.read()
+    password = input("Input Password : ")
+    my_password = (data)
+    key_encode = my_password.encode("ascii")
+    encode_base64 = base64.b64encode(key_encode)
+    log_encode = encode_base64.decode("ascii")
+    decode_base64 = (log_encode)
+    encode_bytes = decode_base64.encode("ascii")
+    decode_bytes = base64.b64decode(encode_bytes)
+    log_decode = decode_bytes.decode("ascii")
+    list_pass = []
+    list_pass.append(password)
+    if password == log_encode:
+        print("You were inputing correct password ")
+        print(list_pass)
+        print("decode : ",log_decode)
+        if  MyData() == exit() or "End Programing": # exit and quit
                 pass
-        elif password == log_decode:
-            print("you were inputing correct password ")
-            print(list_pass)
-            print("encode : ", log_encode)
-            if MyData()==quit() or "End Programing":
+    elif password == log_decode:
+        print("You were inputing correct password ")
+        print(list_pass)
+        print("encode : ", log_encode)
+        if MyData() == quit() or "End Programing": 
                 pass
-        if password != log_encode or log_decode :
-            print("you were inputing wrong password, please! re-enter")
-            print(list_pass)
-            break
+    if password != log_encode or log_decode :
+        print("You were inputing wrong password, please! re-enter")
+        print(list_pass)
         
-
           
             
                 

@@ -33,38 +33,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from time import sleep
 
-def open_tool():
-    while True:
-        while True:
-                file_object = open("clearlove7_developer_tool.txt")
-                data = file_object.read()
-                password = input("nhap pass : ")
-                my_password = (data)
-                key_encode = my_password.encode("ascii")
-                encode_base64 = base64.b64encode(key_encode)
-                log_encode = encode_base64.decode("ascii")
-                decode_base64 = (log_encode)
-                encode_bytes = decode_base64.encode("ascii")
-                decode_bytes = base64.b64decode(encode_bytes)
-                log_decode = decode_bytes.decode("ascii")
-                list_pass = []
-                list_pass.append(password)
-                if password == log_encode:
-                    print("you were inputing correct password ")
-                    print(list_pass)
-                    print("decode : ",log_decode)
-                    if Mytool() == quit() or "End Programing":
-                        pass
-                elif password == log_decode:
-                    print("you were inputing correct password ")
-                    print(list_pass)
-                    print("encode : ", log_encode)
-                    if Mytool() == quit() or "End Programing":
-                        pass
-                elif password != log_encode or log_decode:
-                    print("you were inputing wrong password, please! re-enter")
-                    print(list_pass)
-                    break
+                    
 def Mytool():
     init(wrap=False)
     stream = AnsiToWin32(sys.stderr).stream # text color
@@ -311,13 +280,40 @@ def Mytool():
     button_game.grid(row=1,column=4)
     # infinite loop which can be terminated (mainloop) (vòng lặp vô hạn có thể được kết thúc bởi mainloop())
     # the tool will by keyboard or mouse interrupt(tool sẽ bị ngắt bằng bàn phím điều khiển hoặc chuột)
+
     new_time()
     tool.mainloop()
     sys.exit("end tool") 
-open_tool()
 
-
-
+while True:
+    file_object = open("clearlove7_developer_tool.txt")
+    data = file_object.read()
+    password = input("nhap pass : ")
+    my_password = (data)
+    key_encode = my_password.encode("ascii")
+    encode_base64 = base64.b64encode(key_encode)
+    log_encode = encode_base64.decode("ascii")
+    decode_base64 = (log_encode)
+    encode_bytes = decode_base64.encode("ascii")
+    decode_bytes = base64.b64decode(encode_bytes)
+    log_decode = decode_bytes.decode("ascii")
+    list_pass = []
+    list_pass.append(password)
+    if password == log_encode:
+        print("you were inputing correct password ")
+        print(list_pass)
+        print("decode : ",log_decode)
+        if Mytool() == exit() or "End Programing":
+            pass
+    elif password == log_decode:
+        print("you were inputing correct password ")
+        print(list_pass)
+        print("encode : ", log_encode)
+        if Mytool() == quit() or "End Programing":
+            pass
+    elif password != log_encode or log_decode:
+        print("you were inputing wrong password, please! re-enter")
+        print(list_pass)
 
 
 
