@@ -6,7 +6,6 @@ from tracemalloc import start
 from colorama.ansi import BEL
 from colorama import Fore
 from colorama import init, AnsiToWin32
-from numpy import tile
 from selenium import webdriver
 import os , sys
 import pyttsx3
