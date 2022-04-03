@@ -43,11 +43,11 @@ def Hacker():
     Tolist = []
     Anonymous = lambda pass1,pass2,pass3 :pass1+pass2+pass3 
     print(Anonymous("tuongyeuthao\n", "tuongyeuthao1\n" ,"tuongyeubame"))
-
+#MyQuery.MyData()
 def Welcome():
     MyQuery.MyData()
     Paint()
     Hacker()
+
 if __name__ == "__main__":
     Welcome()
-

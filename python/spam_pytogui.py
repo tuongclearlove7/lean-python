@@ -25,15 +25,14 @@ class Multithreading():
 Obj = Multithreading()
 
 def Handle():
-    global content,i
+    global content
     content = input_content.get()
     Delay = de_time.get()
     num = text_content.get()
     send_spam = box_1.get(1.0,END)
     shutdown_text = send_spam.split('\n')
-    print( "{}".format("ready"))
-    for i in range(10,0,-1):# countdown 10s
-        print(i, end=" countdown... ",flush=True)
+    for index in range(10,0,-1):# countdown 10s
+        print(index, end=" countdown... ",flush=True)
         sleep(1)
     print("start")
     for i in range(num+1):

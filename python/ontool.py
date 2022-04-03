@@ -2,7 +2,6 @@ from os import pipe
 from tkinter import *
 from tkinter import messagebox
 from tkinter import font
-from tracemalloc import start
 from colorama.ansi import BEL
 from colorama import Fore
 from colorama import init, AnsiToWin32
@@ -89,9 +88,8 @@ class Software():
             loop = int(input("input number integer login google : "))
             Delay  = int(input("input integer time each time off : "))
             for tuong in range(loop):
-                val = int(loop)
-                print("number of loop : ")
-                print(val)
+                print( "time delay : {0}".format(Delay))
+                print("number of loop : {0}".format(loop))
                 bot.say("login google")
                 bot.runAndWait()
                 Software.Login()
@@ -109,34 +107,34 @@ class Software():
                 driver = uc.Chrome()
                 link = f'https://www.google.com'
                 driver.get(link)
+                driver.get('https://google.com')
                 driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
-                WebDriverWait(driver, 10)
-                driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input').send_keys('lol00sever@gmail.com')
-                sleep(1)
-                driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span').click() 
-                sleep(1)
+                sleep(2)
+                link = driver.find_element_by_id('identifierId').send_keys('lol00sever@gmail.com')
+                print(link)
+                driver.find_element_by_id("identifierNext").click()
+                sleep(2)
                 base64_message = 'MTIzNDMyMTEyMzQzMjE='
                 base64_bytes = base64_message.encode('ascii')
                 message_bytes = base64.b64decode(base64_bytes)
                 data = message_bytes.decode('ascii')
-                driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input').send_keys(data)
-                sleep(1)
-                driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span').click()
+                link2= driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(data)
+                link2 = driver.find_element_by_id('passwordNext').click()
                 sleep(2)
             if __name__ == "__main__":
-                driver.get(f'https://www.youtube.com/watch?v=78nhuJ9E1es&t=1s')
+                driver.get('https://www.youtube.com/watch?v=78nhuJ9E1es&t=1s')
+                sleep(3)
+                driver.find_element_by_id('button').click()
+                sleep(1)
+                driver.find_element_by_id('label').click()
                 sleep(2)
-                driver.find_element_by_xpath('/html/body/ytd-app/div[1]/div/ytd-masthead/div[3]/div[3]/div[2]/ytd-topbar-menu-button-renderer[1]/div/a/yt-icon-button/button/yt-icon').click()
-                sleep(2)
-                driver.find_element_by_xpath('/html/body/ytd-app/ytd-popup-container/tp-yt-iron-dropdown/div/ytd-multi-page-menu-renderer/div[3]/div[1]/yt-multi-page-menu-section-renderer/div[2]/ytd-compact-link-renderer[1]/a/tp-yt-paper-item/div[2]/yt-formatted-string[1]').click()
-                sleep(2)
-                driver.find_element_by_xpath('/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-uploads-file-picker/div/ytcp-button/div').click()
+                driver.find_element_by_id('select-files-button').click()
                 sleep(Delay)
                 print("Exit browser")
-            break
+            sys.exit()
 def Multi_tool():
     try:
-        Software.handle()
+       Software.handle()
     except ValueError:
         print("error!, Your browser has been turned off ")
 

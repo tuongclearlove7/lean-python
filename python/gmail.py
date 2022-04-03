@@ -1,7 +1,7 @@
+from ast import While
 import json,requests,time,os,sys
 from time import strftime
 from selenium import webdriver
-#from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import selenium.webdriver.support.ui as ui
 import selenium.webdriver as webdriver
@@ -17,10 +17,8 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from pyvirtualdisplay import Display
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
 
 if __name__ == "__main__":
         driver = uc.Chrome()
@@ -28,15 +26,17 @@ if __name__ == "__main__":
         driver.get(link)
         driver.get('https://google.com')
         driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
-        sleep(1)
-        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input').send_keys('lol00sever@gmail.com')
-        sleep(1)
-        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span').click() 
-        sleep(1)
-        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input').send_keys('12343211234321')
-        sleep(1)
-        driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span').click()
         sleep(2)
+        link = driver.find_element_by_id('identifierId').send_keys('lol00sever@gmail.com')
+        print(link)
+        driver.find_element_by_id("identifierNext").click()
+        sleep(2)
+        link2= driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys("14123123123")
+        sleep(1)
         driver.get('https://www.youtube.com/watch?v=78nhuJ9E1es&t=1s')
-        sleep(10)
+        sleep(60)
 
+#  e dùng xpath đc r này a cái xpath thôi ms đc  lâu
+
+# 
+# dùng xpath k đc r nhiều cái nó k có id á a , dùng class là ntn a

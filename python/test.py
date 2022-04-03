@@ -1,33 +1,62 @@
-                tuong = webdriver.Chrome(executable_path=r"D:\python\chromedriver.exe")
-                tuong.set_window_size(1000,1000)
-                tuong.get("https://www.facebook.com/campaign/landing.php?campaign_id=1661697991&extra_1=s%7Cc%7C432702091386%7Cb%7C%C4%91%C4%83ng%20ky%CC%81%20facebook%7C&placement=&creative=432702091386&keyword=%C4%91%C4%83ng%20ky%CC%81%20facebook&partner_id=googlesem&extra_2=campaignid%3D1661697991%26adgroupid%3D65157403438%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-369935470948%26loc_physical_ms%3D9047170%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMInK-f1ouz9gIV0m4qCh3s3Q27EAAYASAAEgLRovD_BwE") 
-                tuong.find_element_by_name("lastname").send_keys(" trần")
-                tuong.find_element_by_name("firstname").send_keys("tường")
-                tuong.find_element_by_name("reg_email__").send_keys("thetuongyt@gmail.com")
-                sleep(2)
-                tuong.find_element_by_name("reg_email_confirmation__").send_keys("thetuongyt@gmail.com")
-                file_object = open("password.txt")
-                data = file_object.read()
-                tuong.find_element_by_id("password_step_input").send_keys(data)
-                tuong.find_element_by_name("birthday_day").click()
-                tuong.find_element_by_name("birthday_month").click()
-                tuong.find_element_by_name("birthday_year").click()
-                tuong.find_element_by_name("sex").click()
-                sleep(2)
-                tuong.find_element_by_name("websubmit").click()
-                tuong.find_element_by_name("websubmit").click()
-                tuong.find_element_by_name("birthday_age").send_keys("22")
-                tuong.find_element_by_name("websubmit").click()
-                if sleep(time) == bot.say("exit"):
-                    bot.runAndWait()
+from ast import While
+import json, requests, time, os, sys
+from time import strftime
+from selenium import webdriver
+# from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+import selenium.webdriver.support.ui as ui
+import selenium.webdriver as webdriver
+from selenium.webdriver.common.keys import Keys
+#import undetected_chromedriver.v2 as uc
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from time import sleep
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+#from pyvirtualdisplay import Display
+import pyautogui
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+from selenium import webdriver
+import geckodriver_autoinstaller
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+geckodriver_autoinstaller.install()
+
+profile = webdriver.FirefoxProfile(
+    '/Users/<user name>/Library/Application Support/Firefox/Profiles/xxxxx.default-release')
+
+profile.set_preference("dom.webdriver.enabled", False)
+profile.set_preference('useAutomationExtension', False)
+profile.update_preferences()
+desired = DesiredCapabilities.FIREFOX
+
+driver = webdriver.Firefox(firefox_profile=profile,
+                           desired_capabilities=desired)
+
+if __name__ == "__main__":
+    #driver = webdriver.Edge(executable_path=".\Driver\msedgedriver.exe")
+    link = f'https://www.google.com'
+    driver.get(link)
+    driver.get('https://google.com')
+    driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
+
+    sleep(1)
+
+    link = driver.find_element_by_id('identifierId').send_keys('lahahalahao007@gmail.com')
+
+    #driver.find_element_by_id("identifierNext").click()
+    pyautogui.press('enter')
+    sleep(4)
+    link2 = driver.find_element_by_id("password").send_keys("nhao0071002003")
+
+    sleep(5)
+    driver.get('https://www.youtube.com/watch?v=78nhuJ9E1es&t=1s')
+    sleep(10)
 
 
 
-                    tuong = uc.Chrome()
-                tuong.set_window_size(1000,1000)
-                tuong.get("http://gmail.com")
-                tuong.find_element_by_id("identifierId").send_keys("lol00sever@gmail.com")   
-                tuong.find_element_by_xpath("//*[@id='identifierNext']").click()
-                tuong.find_element_by_id("password").send_keys("12343211234321")
-                tuong.find_element_by_name("passwordNext").click()
-                sleep(10)
