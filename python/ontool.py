@@ -63,16 +63,13 @@ My_str.set("Path here")
 
 def openfile():
     global My_img,My_Label
-    global My_Label_Image,Filepath
+    global My_Label_Image,Filepath 
     Filepath = filedialog.askopenfilename(
     initialdir="C:\\Users\\clearlove7\Documents\\GitHub\\clearlove7.github.io\\python",
     title="you are open file",
     filetypes=[
         ("MKV file", ".mkv"),
-        ("PNG file", ".png"),
-        ("All types", "*.*"),
-        ("png files", "*png"),("jng files", "*jng"),
-        ("Text Docs", "*.txt")
+        ("MP4 file", ".mp4"),
     ])
     My_Label = Label(tool,fg="white",bg="#099D9D",text=Filepath)
     My_Label.place(x=0,y=500)
@@ -88,10 +85,10 @@ class Software():
             loop = int(input("input number integer login google : "))
             Delay  = int(input("input integer time each time off : "))
             for tuong in range(loop):
-                print( "time delay : {0}".format(Delay))
                 print("number of loop : {0}".format(loop))
-                bot.say("login google")
-                bot.runAndWait()
+                print( "time delay : {0}".format(Delay))
+                #bot.say("login google")
+                #bot.runAndWait()
                 Software.Login()
         except ValueError:
             bot_said = "you were inputing wrong format "
@@ -113,24 +110,26 @@ class Software():
                 link = driver.find_element_by_id('identifierId').send_keys('lol00sever@gmail.com')
                 print(link)
                 driver.find_element_by_id("identifierNext").click()
-                sleep(2)
+                sleep(5)
                 base64_message = 'MTIzNDMyMTEyMzQzMjE='
                 base64_bytes = base64_message.encode('ascii')
                 message_bytes = base64.b64decode(base64_bytes)
                 data = message_bytes.decode('ascii')
                 link2= driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(data)
                 link2 = driver.find_element_by_id('passwordNext').click()
-                sleep(2)
+                sleep(5)
             if __name__ == "__main__":
-                driver.get('https://www.youtube.com/watch?v=78nhuJ9E1es&t=1s')
+                driver.get('https://www.youtube.com/')
                 sleep(3)
-                driver.find_element_by_id('button').click()
-                sleep(1)
-                driver.find_element_by_id('label').click()
+                driver.get("https://studio.youtube.com/channel/UCNoMlcT-X46-sw2YHlaxOcw/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D")
                 sleep(2)
-                driver.find_element_by_id('select-files-button').click()
+                driver.find_element_by_xpath("/html/body/ytcp-app/ytcp-entity-page/div/ytcp-header/header/div/ytcp-button/tp-yt-iron-icon").click()
+                sleep(2)
+                driver.find_element_by_xpath("/html/body/ytcp-app/ytcp-entity-page/div/ytcp-header/header/div/ytcp-text-menu/tp-yt-paper-dialog/tp-yt-paper-listbox/tp-yt-paper-item[1]/ytcp-ve/div/div/yt-formatted-string").click()
+                sleep(2)
+                driver.find_element_by_xpath("/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-uploads-file-picker/div/ytcp-button/div").click()
                 sleep(Delay)
-                print("Exit browser")
+                print("Đã hết {0}".format(Delay)+"s trình duyệt của bạn đã bị tắt !")
             sys.exit()
 def Multi_tool():
     try:
@@ -149,7 +148,7 @@ l1.grid(row = 1, column = 0, sticky = W, pady = 1)
 
 tick = Checkbutton(tool, text = "Accept", bg="#099D9D",width=5) 
 tick.grid(row = 2, column = 0, sticky = W, columnspan = 2)
-img = PhotoImage(file = "tuongclearlove7.png") 
+img = PhotoImage(file = "swift rose.png") 
 my_image = Label(tool, image=img)
 my_image.place(x=440, y=0,width=400 ,height=400)
 b2 = Button(tool, text= "Login Google",bg="white",activebackground="#3399FF", width = 15, command=Object.Multiple)
