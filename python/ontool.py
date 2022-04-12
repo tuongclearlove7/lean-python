@@ -108,15 +108,14 @@ class Software():
                 driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
                 sleep(2)
                 link = driver.find_element_by_id('identifierId').send_keys('lol00sever@gmail.com')
-                print(link)
                 driver.find_element_by_id("identifierNext").click()
                 sleep(5)
                 base64_message = 'MTIzNDMyMTEyMzQzMjE='
                 base64_bytes = base64_message.encode('ascii')
                 message_bytes = base64.b64decode(base64_bytes)
                 data = message_bytes.decode('ascii')
-                link2= driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(data)
-                link2 = driver.find_element_by_id('passwordNext').click()
+                driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(data)
+                driver.find_element_by_id('passwordNext').click()
                 sleep(5)
             if __name__ == "__main__":
                 driver.get('https://www.youtube.com/')
@@ -129,7 +128,7 @@ class Software():
                 sleep(2)
                 driver.find_element_by_xpath("/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-uploads-file-picker/div/ytcp-button/div").click()
                 sleep(Delay)
-                print("Đã hết {0}".format(Delay)+"s trình duyệt của bạn đã bị tắt !")
+                print("Đã hết {0}".format(Delay) + "s trình duyệt của bạn đã bị tắt !")
             sys.exit()
 def Multi_tool():
     try:
