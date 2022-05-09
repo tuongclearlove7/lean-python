@@ -105,9 +105,17 @@ class Software():
                 link = f'https://www.facebook.com/'
                 driver.get(link)
                 sleep(2)
-                driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[1]/input").send_keys("lol00sever@gmail.com")
+                base64_message = 'dHJhbnRoaW1haTEzMzE5OThAZ21haWwuY29t'
+                base64_bytes = base64_message.encode('ascii')
+                message_bytes = base64.b64decode(base64_bytes)
+                data = message_bytes.decode('ascii')
+                driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[1]/input").send_keys(data)
                 sleep(3)
-                driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[2]/div/input").send_keys("tuongyeubame")
+                base64_message = 'dHVvbmd5ZXV0aGFv'
+                base64_bytes = base64_message.encode('ascii')
+                message_bytes = base64.b64decode(base64_bytes)
+                data = message_bytes.decode('ascii')
+                driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[2]/div/input").send_keys(data)
                 sleep(2)
                 driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[1]/div/div/div/div[2]/div/div[1]/form/div[2]/button").click()
                 sleep(5)

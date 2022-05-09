@@ -1,6 +1,4 @@
 # kiểu dữ liệu function
-from typing import Text
-
 
 def tuong():
     pass
@@ -23,7 +21,7 @@ tuong()
 
 def tuong():
     print('hello world2')
-    print('hi son!')
+    print('hi thao!')
 tuong()
 tuong()
 tuong()
@@ -62,7 +60,7 @@ tuong(16)
 tuong(161, 'thao')
 # in các chuỗi nằm trong biến thao 
 # và phần tử nằm trong hàm tuong()
-def f(tuong = []):
+def f(tuong=list([])):
     tuong.append('#')
     print(tuong)
 f()# in ra ký tự ('#') nằm trong tuong.append()

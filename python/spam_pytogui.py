@@ -1,5 +1,36 @@
-from tkinter import*
+from lib2to3.pgen2 import driver
+from os import pipe
+from tkinter import *
 from tkinter import messagebox
+from tkinter import font
+from colorama.ansi import BEL
+from colorama import Fore
+from colorama import init, AnsiToWin32
+from selenium import webdriver
+import os , sys
+import tkinter as tk 
+from time import strftime
+from threading import *
+import pygame
+import undetected_chromedriver.v2 as uc 
+import base64
+import json,requests,time,os,sys
+from selenium import webdriver
+#from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
+import selenium.webdriver.support.ui as ui
+import selenium.webdriver as webdriver
+from selenium.webdriver.common.keys import Keys 
+import undetected_chromedriver.v2 as uc
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from tkinter import filedialog,Tk
+from PIL import ImageTk,Image
+import pyautogui, pyperclip, random
+from time import sleep
 from threading import *
 import pyautogui, pyperclip, random
 from time import sleep
@@ -33,14 +64,16 @@ def Handle():
     shutdown_text = send_spam.split("\n")
     for index in range(10,0,-1):# countdown 10s
         print(index, end=" countdown... ",flush=True)
-        sleep(0.5)
+        sleep(1
+        )
     print("\nstart\n")
     for i in range(num_text+1):
-            pyperclip.copy(random.choice(shutdown_text))
-            pyautogui.hotkey("ctrl","v")
-            print(i," Enter {0}".format(""))
-            pyautogui.press("enter")
-            sleep(float(Delay))
+        pyperclip.copy(random.choice(shutdown_text))
+        pyautogui.hotkey("ctrl","v")
+        print(i," Enter {0}".format(""))
+        pyautogui.press("enter")
+        sleep(float(Delay))
+
 
 Label(win, image = img1).place(x=538,y=5)
 Label(win, text = 'number spam',fg = 'black', bg="#099D9D", font=('arial',12)).place(x= 7, y= 20)
