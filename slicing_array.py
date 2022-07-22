@@ -45,7 +45,7 @@ print(tuong.upper())
 x = int(input("Nhập một số : ")) 
 def square(number): 
     return number ** 2
-print (square(x)) #in bình phương của x
+print(square(x)) #in bình phương của x
 
 # viết một chương trình
 # để in tài liệu về một số hàm Python được tích hợp sẵn như abs()

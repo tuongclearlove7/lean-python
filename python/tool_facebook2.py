@@ -40,7 +40,7 @@ voices = bot.getProperty("voices")
 bot.setProperty("voice", voices[1].id) 
 tool = Tk()
 tool.geometry("840x400")
-tool.iconbitmap("tuongclearlove7.ico")
+tool.iconbitmap('C:\\Users\\clearlove7\\Documents\\GitHub\\clearlove7.github.io\\python\\tuongclearlove7.ico')
 tool.title("My Software")# set title
 tool.configure(background="#099D9D")
 
@@ -77,62 +77,62 @@ def openfile():
     My_Label_Image = Label(image=My_img).place(x=20,y=230)
     My_str.set(Filepath)
 
-class Software():
-    def handle():
-        global Delay
-        global loop,tuong
-        try:
-            loop = int(input("input number integer login google : "))
-            Delay  = int(input("input integer time each time off : "))
-            for tuong in range(loop):
-                print("number of loop : {0}".format(loop))
-                print( "time delay : {0}".format(Delay))
-                #bot.say("login google")
-                #bot.runAndWait()
-                Software.Login()
-        except ValueError:
-            bot_said = "you were inputing wrong format "
-            print(bot_said)
-            bot.say(bot_said)
-            bot.runAndWait()
 
-    def Login():
-    #num = int(input("input integer create account : "))
-    #time  = int(input("input integer time each time off : "))
-        while True:
-            if __name__ == "__main__":
-                driver = uc.Chrome()
-                link = f'https://www.google.com'
-                driver.get(link)
-                driver.get('https://google.com')
-                driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
-                sleep(2)
-                link = driver.find_element_by_id('identifierId').send_keys('lol00sever@gmail.com')
-                driver.find_element_by_id("identifierNext").click()
-                sleep(5)
-                base64_message = 'MTIzNDMyMTEyMzQzMjE='
-                base64_bytes = base64_message.encode('ascii')
-                message_bytes = base64.b64decode(base64_bytes)
-                data = message_bytes.decode('ascii')
-                driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(data)
-                driver.find_element_by_id('passwordNext').click()
-                sleep(5)
-            if __name__ == "__main__":
-                driver.get('https://www.youtube.com/')
-                sleep(3)
-                driver.get("https://studio.youtube.com/channel/UCNoMlcT-X46-sw2YHlaxOcw/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D")
-                sleep(2)
-                driver.find_element_by_xpath("/html/body/ytcp-app/ytcp-entity-page/div/ytcp-header/header/div/ytcp-button/tp-yt-iron-icon").click()
-                sleep(2)
-                driver.find_element_by_xpath("/html/body/ytcp-app/ytcp-entity-page/div/ytcp-header/header/div/ytcp-text-menu/tp-yt-paper-dialog/tp-yt-paper-listbox/tp-yt-paper-item[1]/ytcp-ve/div/div/yt-formatted-string").click()
-                sleep(2)
-                driver.find_element_by_xpath("/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-uploads-file-picker/div/ytcp-button/div").click()
-                sleep(Delay)
-                print("Đã hết {0}".format(Delay) + "s trình duyệt của bạn đã bị tắt !")
-            sys.exit()
+def handle():
+    global Delay
+    global loop,tuong
+    try:
+        loop = int(input("input number integer login google : "))
+        Delay  = int(input("input integer time each time off : "))
+        for tuong in range(loop):
+            print("number of loop : {0}".format(loop))
+            print( "time delay : {0}".format(Delay))
+            #bot.say("login google")
+            #bot.runAndWait()
+            Login()
+    except ValueError:
+        bot_said = "you were inputing wrong format "
+        print(bot_said)
+        bot.say(bot_said)
+        bot.runAndWait()
+
+def Login():
+#num = int(input("input integer create account : "))
+#time  = int(input("input integer time each time off : "))
+    while True:
+        if __name__ == "__main__":
+            driver = uc.Chrome()
+            link = f'https://www.google.com'
+            driver.get(link)
+            driver.get('https://google.com')
+            driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
+            sleep(2)
+            link = driver.find_element_by_id('identifierId').send_keys('lol00sever@gmail.com')
+            driver.find_element_by_id("identifierNext").click()
+            sleep(5)
+            base64_message = 'MTIzNDMyMTEyMzQzMjE='
+            base64_bytes = base64_message.encode('ascii')
+            message_bytes = base64.b64decode(base64_bytes)
+            data = message_bytes.decode('ascii')
+            driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(data)
+            driver.find_element_by_id('passwordNext').click()
+            sleep(5)
+        if __name__ == "__main__":
+            driver.get('https://www.youtube.com/')
+            sleep(3)
+            driver.get("https://studio.youtube.com/channel/UCNoMlcT-X46-sw2YHlaxOcw/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D")
+            sleep(2)
+            driver.find_element_by_xpath("/html/body/ytcp-app/ytcp-entity-page/div/ytcp-header/header/div/ytcp-button/tp-yt-iron-icon").click()
+            sleep(2)
+            driver.find_element_by_xpath("/html/body/ytcp-app/ytcp-entity-page/div/ytcp-header/header/div/ytcp-text-menu/tp-yt-paper-dialog/tp-yt-paper-listbox/tp-yt-paper-item[1]/ytcp-ve/div/div/yt-formatted-string").click()
+            sleep(2)
+            driver.find_element_by_xpath("/html/body/ytcp-uploads-dialog/tp-yt-paper-dialog/div/ytcp-uploads-file-picker/div/ytcp-button/div").click()
+            sleep(Delay)
+            print("Đã hết {0}".format(Delay) + "s trình duyệt của bạn đã bị tắt !")
+        sys.exit()
 def Multi_tool():
     try:
-       Software.handle()
+       handle()
     except ValueError:
         print("error!, Your browser has been turned off ")
 
@@ -147,7 +147,7 @@ l1.grid(row = 1, column = 0, sticky = W, pady = 1)
 
 tick = Checkbutton(tool, text = "Accept", bg="#099D9D",width=5) 
 tick.grid(row = 2, column = 0, sticky = W, columnspan = 2)
-img = PhotoImage(file = "swift rose.png") 
+img = PhotoImage(file = "C:\\Users\\clearlove7\\Documents\\GitHub\\clearlove7.github.io\\python\\r.png") 
 my_image = Label(tool, image=img)
 my_image.place(x=440, y=0,width=400 ,height=400)
 b2 = Button(tool, text= "Login Google",bg="white",activebackground="#3399FF", width = 15, command=Object.Multiple)

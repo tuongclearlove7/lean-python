@@ -181,7 +181,7 @@ def Mytool():
             myGame.gamecl()
             break
     def play_sound():
-        pygame.mixer.music.load("vippro76.mp3") #Loading File Into Mixer
+        pygame.mixer.music.load("nhac.mp3") #Loading File Into Mixer
         pygame.mixer.music.play() #Playing It In The Whole Device
     def new_time():
         time_string = strftime("Time : %H:%M:%S %p") # time format (định dạng thời gian)

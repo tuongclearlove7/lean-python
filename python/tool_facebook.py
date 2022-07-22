@@ -147,7 +147,7 @@ l1.grid(row = 1, column = 0, sticky = W, pady = 1)
 
 tick = Checkbutton(tool, text = "Accept", bg="#099D9D",width=5) 
 tick.grid(row = 2, column = 0, sticky = W, columnspan = 2)
-img = PhotoImage(file = "swift rose.png") 
+img = PhotoImage(file = "r.png") 
 my_image = Label(tool, image=img)
 my_image.place(x=440, y=0,width=400 ,height=400)
 b2 = Button(tool, text= "Login Google",bg="white",activebackground="#3399FF", width = 15, command=Object.Multiple)
