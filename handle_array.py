@@ -55,28 +55,28 @@ def Time_count():
         print("%|")
         sleep(0.05)
 
-def Handle_Array():
+def Handle():
     print("Co cac bai tap sau day")
     sleep(1)
     print("1.mang tinh\n2.mang dong ve chuoi\n3.mang dong ve so nguyen\nkey la 1, 2, 3")
-    key = [1,2,3]
+    keyvalue = [1,2,3]
     try:
         keyword = int(input("nhap : "))
     except ValueError:
         print("ban phai nhap so nguyen")
         exit()
     while True:
-        if keyword == key[0]:
+        if keyword == keyvalue[0]:
             Time_count()
             os.system('cls')
             static_array()
             break
-        elif keyword == key[1]:
+        elif keyword == keyvalue[1]:
             Time_count()
             os.system('cls')
             Dynam_array_string()
             break
-        elif keyword == key[2]:
+        elif keyword == keyvalue[2]:
             Time_count()
             os.system('cls')
             Dynam_arraay() 
@@ -93,7 +93,7 @@ def Handle_program():
         if password == key:
             print("chuc mang ban da nhap dung mat khau, bam enter de tiep tuc")
             input(">")
-            Handle_Array()
+            Handle()
             break;
         else:
             password = input("ban da nhap sai mat khau nhap lai : ")
