@@ -3,7 +3,7 @@ import os, sys
 from Data_Oop import MyQuery, Paint, Hacker
 while True:
     password = input("Input Password : ")
-    file_object = open("clearlove7_developer_tool.txt")
+    file_object = open("C:\\Users\clearlove7\\Documents\\GitHub\\clearlove7.github.io\\python\\clearlove7_developer_tool.txt")
     data = file_object.read()
     base64_message = data
     base64_bytes = base64_message.encode('ascii')
