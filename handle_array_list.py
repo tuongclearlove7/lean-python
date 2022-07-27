@@ -61,8 +61,10 @@ index2 = [1, 2, "javascript", True]
 del index2[3]
 print(index2)
 
-
-
+a = float(input())
+b = float(input())
+c = float(input())
+print(a+b+c)
 
 
 

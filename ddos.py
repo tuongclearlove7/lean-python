@@ -1,4 +1,3 @@
-#tuong
 from time import sleep
 from random import random, randint
 

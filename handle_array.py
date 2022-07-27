@@ -1,10 +1,13 @@
 import math
 import os
-from time import sleep, time
+from time import sleep
+import random
 from random import random, randint
+from rand_dethi import random_array
+
 
 def static_array():
-    arr_object = [False,True,None,[],"string",1,object,__doc__]# mang tinh chua tat ca object
+    arr_object = [False,True,None,[],"string",1,object,__name__]# mang tinh chua tat ca object
     for i in range(len(arr_object)):
         print(arr_object[i])
     print(arr_object)
@@ -15,8 +18,20 @@ def static_array():
     print(a)
     print("max trong mang tinh la : "+str(max(a)))
     print("min trong mang tinh la : "+str(min(a)))
+    hash_code = list([id("tuong"),hash("tuong")])# handle hash code 
+    print(hash_code)
+    for i in hash_code:
+        print("hash code : ",i)
+    my_set = [{
+    "id": 1,
+    "name":"tuong",
+    "age": 20,
+    "year": 2002
+    }]
+    for  i in my_set:
+        print("set : "+str(i))
 
-def Dynam_array_string():
+def Dynamite_array_string():
     global n
     arr = []
     n=int(input("nhập n : "))
@@ -26,7 +41,7 @@ def Dynam_array_string():
         print(arr[idx])
     print(arr)
 
-def Dynam_arraay():
+def Dynamite_array():
     array = []
     n=int(input("nhập n : "))
     for i in range(n):
@@ -53,46 +68,63 @@ def Time_count():
     for i in range(len(cowndown)):
         print("""|loading... """,cowndown[i], end = "")
         print("%|")
-        sleep(0.05)
+        sleep(0.015)
+
+def rand():
+    if __name__ == "__main__":
+        random_array()
+    pass
 
 def Handle():
+    print("chuc mang ban da nhap dung mat khau, bam enter de tiep tuc")
+    input("Enter_>")
     print("Co cac bai tap sau day")
     sleep(1)
-    print("1.mang tinh\n2.mang dong ve chuoi\n3.mang dong ve so nguyen\nkey la 1, 2, 3")
-    keyvalue = [1,2,3]
-    try:
-        keyword = int(input("nhap : "))
-    except ValueError:
-        print("ban phai nhap so nguyen")
-        exit()
+    print("1.mang tinh\n2.mang dong ve chuoi\n3.mang dong ve so nguyen\nkey la 1, 2, 3, 4")
+    keyvalue = [1,2,3,4]
+    
     while True:
-        if keyword == keyvalue[0]:
-            Time_count()
-            os.system('cls')
-            static_array()
-            break
-        elif keyword == keyvalue[1]:
-            Time_count()
-            os.system('cls')
-            Dynam_array_string()
-            break
-        elif keyword == keyvalue[2]:
-            Time_count()
-            os.system('cls')
-            Dynam_arraay() 
-            break
-        elif keyword == 0 or keyword > 3:
-            keyword = int(input("ban phai nhai nhap so nguyen nhap lai : "))
-        
-            
+        try:
+            keyword = int(input("nhap : "))
+            if keyword == keyvalue[0]:
+                Time_count()
+                os.system('cls')
+                static_array()
+                break
+            elif keyword == keyvalue[1]:
+                Time_count()
+                os.system('cls')
+                Dynamite_array_string()
+                break
+            elif keyword == keyvalue[2]:
+                Time_count()
+                os.system('cls')
+                Dynamite_array() 
+                break
+            elif keyword == keyvalue[3]:
+                os.system("cls")
+                rand()
+                break
+            elif keyword == 0 or keyword > 4:
+                print("ban phai so nguyen 1, 2, 3, 4 vui long nhap lai")
+        except:
+            print("ban phai nhap so nguyen vui long nhap lai ")
+
+
 def Handle_program():
     print("================================MENU==================================")
-    key = "t"
-    password = input("nhap pass : ")
+    key = ["t",["a"]]
+    for i in key[0]:
+        print(str(key[0]))
+    for j in key[1]:
+        print(j)
+            
+    password = input("nhap mat khau : ")
     while True:
-        if password == key:
-            print("chuc mang ban da nhap dung mat khau, bam enter de tiep tuc")
-            input(">")
+        if password == key[0]:
+            Handle()
+            break;
+        elif password == j:
             Handle()
             break;
         else:
