@@ -1,6 +1,6 @@
 from time import sleep
 from selenium import webdriver
-tuong = webdriver.Chrome(executable_path=r"C:\Users\DELL\Documents\selenium\chromedriver.exe")
+tuong = webdriver.Chrome(executable_path=r"C:\Users\clearlove7\Documents\GitHub\clearlove7.github.io\chromedriver.exe")
 tuong.set_window_size(1000,1000)
 tuong.get("https://www.facebook.com/login")
 tuong.find_element_by_id("email").send_keys("")

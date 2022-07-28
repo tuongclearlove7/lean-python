@@ -3,7 +3,8 @@ import os
 from time import sleep
 import random
 from random import random, randint
-from rand_dethi import random_array
+from Random_exam import random_array
+from My_Browser import Turn_on_browser
 
 
 def static_array():
@@ -70,10 +71,7 @@ def Time_count():
         print("%|")
         sleep(0.015)
 
-def rand():
-    if __name__ == "__main__":
-        random_array()
-    pass
+
 
 def Handle():
     print("chuc mang ban da nhap dung mat khau, bam enter de tiep tuc")
@@ -81,7 +79,7 @@ def Handle():
     print("Co cac bai tap sau day")
     sleep(1)
     print("1.mang tinh\n2.mang dong ve chuoi\n3.mang dong ve so nguyen\nkey la 1, 2, 3, 4")
-    keyvalue = [1,2,3,4]
+    keyvalue = [1,2,3,4,5]
     
     while True:
         try:
@@ -103,9 +101,14 @@ def Handle():
                 break
             elif keyword == keyvalue[3]:
                 os.system("cls")
-                rand()
+                random_array()
                 break
-            elif keyword == 0 or keyword > 4:
+            elif keyword == keyvalue[4]:
+                Time_count()
+                os.system('cls')
+                Turn_on_browser()
+                break
+            elif keyword == 0 or keyword > 5:
                 print("ban phai so nguyen 1, 2, 3, 4 vui long nhap lai")
         except:
             print("ban phai nhap so nguyen vui long nhap lai ")
