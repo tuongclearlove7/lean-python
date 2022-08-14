@@ -1,3 +1,3 @@
 import os
-cmd = '"D:\Microsoft VS Code\Code.exe"'
+cmd = 'date'
 os.system(cmd)

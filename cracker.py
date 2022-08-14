@@ -13,10 +13,7 @@ def crack():
             print("password is "+"".join(guess_pass))
             break
 
-for i in range(100):
-    Literary = ['vcap', 'dat nuoc', 'song da', 'chiec thuyen', 'vo nhat','song','tay tien','song huong']
-    print(random.choice(Literary))
-print("de thi la : "+str(random.choice(Literary)))
+crack()
 
 
 

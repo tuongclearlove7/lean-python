@@ -1,42 +1,30 @@
-from ast import While
-import json,requests,time,os,sys
-from time import strftime
+#open chrome driver
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import selenium.webdriver.support.ui as ui
-import selenium.webdriver as webdriver
-from selenium.webdriver.common.keys import Keys 
-import undetected_chromedriver.v2 as uc
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
-from time import sleep
-import unittest
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from pyvirtualdisplay import Display
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+s = Service(r'C:\Users\clearlove7\Documents\GitHub\clearlove7.github.io\python\chromedriver.exe')
+driver = webdriver.Chrome(service=s)
+driver.get(r"https://www.google.com/search?q=gg+d%E1%BB%8Bch&rlz=1C1FKPE_viVN997VN997&oq=gg&aqs=chrome.0.69i59l3j0i131i433i512l4j69i60.826j0j7&sourceid=chrome&ie=UTF-8")
+#find bằng id
+element = driver.find_element(By.ID, "element_id")
+#file bằng name
+element = driver.find_element(By.NAME, "element_name")
+#file bằng link_text
+element = driver.find_element(By.LINK_TEXT, "element_link_text")
+#find bằng partial_link_text
+element = driver.find_element(By.PARTIAL_LINK_TEXT, "element_partial_link_text")
+#find bằng tag_name
+element = driver.find_element(By.TAG_NAME, "element_tag_name")
+#find bằng css_selector
+element = driver.find_element(By.CSS_SELECTOR, "element_css_selector")
+#find bằng xpath
+element = driver.find_element(By.XPATH, "element_xpath")
 
-if __name__ == "__main__":
-        driver = uc.Chrome()
-        link = f'https://www.google.com'
-        driver.get(link)
-        driver.get('https://google.com')
-        driver.get('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&followup=https%3A%2F%2Faccounts.google.com%2F%3Fhl%3Dvi&hl=vi&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
-        sleep(2)
-        link = driver.find_element_by_id('identifierId').send_keys('lol00sever@gmail.com')
-        print(link)
-        driver.find_element_by_id("identifierNext").click()
-        sleep(2)
-        link2= driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys("14123123123")
-        sleep(1)
-        driver.get('https://www.youtube.com/watch?v=78nhuJ9E1es&t=1s')
-        sleep(60)
 
-#  e dùng xpath đc r này a cái xpath thôi ms đc  lâu
 
-# 
-# dùng xpath k đc r nhiều cái nó k có id á a , dùng class là ntn a
+
+
+
+
+

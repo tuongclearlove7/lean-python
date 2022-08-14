@@ -26,17 +26,12 @@ def BOT():
     Speak("Hi, I'm Clearlove7")
     os.system("cls")
     sleep(1)
-    hour = datetime.datetime.now().hour
-    if hour >= 6 and hour<12:
-        Speak("Good Morning")
-        os.system("cls")
-    elif hour>=12 and hour<18:
-        Speak("Good Afternoon")
-        os.system("cls")
-    elif hour>=18 and hour<24:
-        Speak("Good Evening")
-        os.system("cls")
 
+    hour = datetime.datetime.now().hour
+    if hour >= 6 and hour<12:Speak("good morning")
+    elif hour>=12 and hour<18:Speak("good afternoon")
+    elif hour>=18 and hour<24:Speak("good everning")
+    
     turn_on = ["turn on facebook",
                "turn on youtube",
                "start music",
@@ -68,9 +63,15 @@ def BOT():
         Speak(turn_on[3])
         Time_count()
         os.system(url[3])
+        sleep(1)
    
             
 BOT()
 Speak('Good luck')
+
+
+
+
+
 
 
