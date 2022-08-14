@@ -13,10 +13,10 @@ App.configure(background="#099D9D")
 token_var=tk.StringVar()
 content_var=tk.StringVar()
 
-def F_Token(token):
+def F_Token(msg_token):
     file_token = open('token.txt')
     data = file_token.read()
-    print(token+data)
+    print(msg_token+data)
 F_Token("token : ")
 
 def Post_status(My_access_token,My_msg):
