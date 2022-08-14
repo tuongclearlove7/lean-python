@@ -5,7 +5,6 @@ from threading import *
 from tkinter import *
 import tkinter as tk
 
-
 App = Tk()
 App.geometry("550x150")
 App.title("Tool API Post Stt Facebook")
@@ -13,6 +12,12 @@ App.iconbitmap("tuongclearlove7.ico")
 App.configure(background="#099D9D")
 token_var=tk.StringVar()
 content_var=tk.StringVar()
+
+def F_Token(token):
+    file_token = open('token.txt')
+    data = file_token.read()
+    print(token+data)
+F_Token("token : ")
 
 def Post_status(My_access_token,My_msg):
     try:
@@ -41,7 +46,6 @@ inputtoken = Label(App,text='nhập token',bg="#099D9D",font=('calibre',10, 'bol
 token = Entry(App,textvariable=token_var,width=70).place(x=100,y=10)
 imputcontent = Label(App,text='nhập nội dung',bg="#099D9D",font=('calibre',10, 'bold')).place(x=10,y=40)
 content = Entry(App,textvariable=content_var,width=30).place(x=110,y=40)
-
 Button_started = Button(App,text="start",font=('calibre',10, 'bold'), command=multiple_threading)
 Button_started.place(x=280,y=80)
 
