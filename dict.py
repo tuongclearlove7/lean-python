@@ -3,6 +3,8 @@
 dic = {'tuong' : 19 }
 print(dic)
 print(type(dic))
+for i in dic:
+    print(i)
 
 dic = {key: value for key, value in [('tuong','tran'),('the', 16)]}
 print(dic)
@@ -53,15 +55,15 @@ dic['name'] = dic['name'] + 'tuong'
 print(dic)
 
 
-dic = dict( porn=16, name1='Tuong', Fullname='Tran The Tuong')
-dic['day of birth'] = dic['porn'] + 0
+dic = dict( porn=16012002, name1='Tuong', Fullname='Tran The Tuong')
+dic['birth day'] = dic['porn'] + 0
 # trong  dict( porn=16, name1='Tuong', Fullname='Tran The Tuong')
 # với porn, name1, fullname có các chuỗi và số
 # trong dic chứa các phần tử + 0 là 
 # porn = 16 được xác định trong dic['porn'] + 0 = 16
-# ==> 'day of birth': 16
-# lưu ý nếu porn='chuỗi' thì dic['day of birth'] = dic['porn'] + 'phải công cho chuỗi'
-# và porn = số thì dic['day of birth'] = dic['porn'] + cộng cho số
+# ==> 'birth day': 16
+# lưu ý nếu porn='chuỗi' thì dic['birth day'] = dic['porn'] + 'phải công cho chuỗi'
+# và porn = số thì dic['birth day'] = dic['porn'] + cộng cho số
 print(dic)
 
 
@@ -70,7 +72,7 @@ dic['Full name'] = dic['name'] + 'The Tuong'
 print(dic)
 
 
-dic = dict(tuong='day of birth :')
+dic = dict(tuong='birth day :')
 dic['tuong'] = dic['tuong'] + ' 16/1/2002'
 print(dic)
 

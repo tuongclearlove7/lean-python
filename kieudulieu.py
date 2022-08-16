@@ -1,3 +1,4 @@
+from decimal import*
 # gán cho a giá trị = 4 là kiểu số nguyên
 a = 1.123456789101112131415
 #print là dán ra màn hình
@@ -8,7 +9,6 @@ print(type(a))
 # số thực là số 2.1 , 2.2 , 2.3 , .......
 #chỉ lấy sắc xuất 12 chữ số ở đuôi
 # tác dụng là lấy toàn bộ nội dung của thư viện decimal
-from decimal import*
 # từ thư viện decimal import mọi thứ vào (*) 
 # lấy tối đa 30 chữ số phần nguyên và phần thập phân decimal
 # dùng hàm getcontext().prec
@@ -18,3 +18,18 @@ print(f)
 
 print(Decimal(10)/Decimal(3))
 # nó chỉ chỉ 30 chữ số ở đằng sau
+def App_types():
+    """build-in function types"""
+    print({})
+    print([])
+    print(dict(dictionary='dic'))
+    print(object)
+    print(App_types)
+    print("string")
+    print(None)
+    print(float(1))
+    print(int(1))
+    print('')
+    print(__name__)
+    print(True,False)
+App_types()
