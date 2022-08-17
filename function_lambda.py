@@ -60,8 +60,8 @@ print(find_greater(6, 2))# in ra số lớn hơn
 
 def tuong(first_string):
     return lambda second_string: first_string + second_string
-slogan = tuong('Clearlove7')
-print(slogan)
+print(tuong('Clearlove7'))
+
 
 def tuong(first_string):
     return lambda second_string: first_string + second_string
