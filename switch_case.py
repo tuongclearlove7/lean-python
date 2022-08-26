@@ -30,19 +30,19 @@ def die():
         print(myday)
     except:
         print('phai nhap tu 2 den 8')
-        
+
 def defult(self):
     print(self)
 def die(day):
-    Case = [None,None,None,2,3,4,5,6,7,8,{lambda:0}]
+    Case = [None,None,2,3,4,5,6,7,8,{lambda:0}]
     switch = {
-            Case[2]: lambda :'monday',
-            Case[3]: lambda :'tuesday',
-            Case[4]: lambda :'wednesday',
-            Case[5]: lambda :'thursday',
-            Case[6]: lambda :'friday', 
-            Case[7]: lambda :'saturday',
-            Case[8]: lambda :'sunday'
+             Case[2]: lambda :'monday',
+             Case[3]: lambda :'tuesday',
+             Case[4]: lambda :'wednesday',
+             Case[5]: lambda :'thursday',
+             Case[6]: lambda :'friday', 
+             Case[7]: lambda :'saturday',
+             Case[8]: lambda :'sunday'
     }[day]()
     return 'today is : '+switch
 try:

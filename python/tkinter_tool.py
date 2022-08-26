@@ -8,7 +8,7 @@ from colorama.ansi import BEL
 from colorama import Fore
 from colorama import init, AnsiToWin32
 from selenium import webdriver
-import os , sys
+import os , sys#PhotoImage
 import pyttsx3
 import tkinter as tk 
 from time import strftime

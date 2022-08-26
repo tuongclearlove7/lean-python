@@ -3,8 +3,8 @@ def map(func, iterable):
     for x in iterable:
         yield func(x)
 
-
-def inc(x): return x + 1
+def inc(x): 
+    return x + 1
 # return x + 1 
 tuong = [1,2,3,4]
 #nên các phần tử trong list được cộng thêm 1

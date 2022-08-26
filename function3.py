@@ -1,16 +1,14 @@
 def tuong(key_a, key_b, key_c, key_d):
-    print(key_a)
-    print(key_b, key_c)
-    print('end', key_d)
-list = ['161', 'Tuong', 2002, 'Clearlove']
+    print(key_a,key_b, key_c,key_d)
+    
+list = [1,2,3,4]
 tuong(list[0], list[1], list[2], list[3])
 # các phần tử trong trong list được truyền vào các key  
 
 
 def tuong(key_a, key_b, key_c, key_d):
-    print(key_a)
-    print(key_b, key_c)
-    print('end', key_d)
+    print(key_a,key_b, key_c, key_d)
+
 list = [161, 'Tuong', 2002, 'Clearlove']
 tuong(*list)
 # chạy tương tự
@@ -23,7 +21,7 @@ list = ['161', 'Tuong', 2002]
 tuong(*list, 'Clearlove7')
 # truyền thêm vào key đưa vào tuong(*list, 'Clearlove7')
 
-def tuong(key_a, key_b, key_c, *, key_d='Thao'):
+def tuong(key_a, key_b, key_c, *, key_d):
     print(key_a)
     print(key_b, key_c)
     print('end', key_d)

@@ -1,4 +1,6 @@
 def tuong(a, b):
+    print(b)
+    print(a)
     pass # pass là lệnh giữ chỗ
 tuong(3, 'Clearlove7')
 tuong(b=3, a="tuongClearlove7")

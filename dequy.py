@@ -5,6 +5,8 @@ def sum(list):
         return 0 # return  bắt đầu từ 0 
     else:
         return list[0] + sum(list[1:])
+
+print(sum([1]))
 # call sum 1,2,3,4 (+1) 
 # sum 2,3,4 (+2) 
 # sum 3,4 (+3)

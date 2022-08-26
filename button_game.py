@@ -45,11 +45,11 @@ while tuong:
         if star_button.draw():
             print("star")
         if exit_button.draw():
-            tuong = False
+            tuong = 0
             print("exit")
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                tuong = False
+                tuong = 0
                 pygame.quit()
                 sys.exit()
         pygame.display.update()

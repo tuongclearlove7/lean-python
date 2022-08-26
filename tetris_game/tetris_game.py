@@ -55,7 +55,7 @@ O = [['.....',
       '.....',
       '.00..',
       '.00..',
-      '.....']]
+      '.00..']]
 
 J = [['.....',
       '.0...',
@@ -355,7 +355,7 @@ def main():
     next_piece = get_shape()
     clock = pygame.time.Clock()
     fall_time = 0
-    fall_speed = 0.27
+    fall_speed = 0.47
     level_time = 0
     score = 0
 
