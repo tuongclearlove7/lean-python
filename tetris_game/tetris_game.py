@@ -499,7 +499,7 @@ pygame.display.set_caption('Tetris')
 win.fill((0, 0, 0))
 draw_text_middle('Play through keyboard arrows, select Pause, Play, Quit by pressing P, U, Q keys or the screen Buttons', 20, (151, 255, 255), win)
 pygame.display.update()
-time.sleep(4.5)
+time.sleep(2)
 main_menu()  # start game
 
 

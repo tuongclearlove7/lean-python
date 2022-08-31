@@ -22,8 +22,10 @@ def crack():
     
     while (guess_pass!=key):
         guess_pass = random.choices(arr,k=len(key))
-        print(Fore.MAGENTA + "", file=stream)
-        print("log : "+str(guess_pass))
+        print(Fore.CYAN + "", file=stream)
+        print(Fore.RED + "", file=stream)
+        print(Fore.GREEN + "", file=stream)
+        print(guess_pass)
         if guess_pass==list(key):
             print("password is "+"".join(guess_pass))
             break
