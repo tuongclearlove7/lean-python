@@ -10,4 +10,4 @@ def tuong(a, b, c, d):
 tuong(3, 'Clearlove7', d=1, c=5)
 print(sorted([3,4,5], reverse=True))
 # chạy từ lớn đến bé
-
+print(57+79+57)

@@ -1,5 +1,6 @@
 # câu lệnh with
 
+
 with open('tuong.txt', 'w') as f:
      print('I love you', file=f)
 #mở file tuong.txt và as f của file=f 

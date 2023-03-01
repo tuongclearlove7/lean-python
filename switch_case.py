@@ -56,7 +56,7 @@ finally:
 while True:
     try:
         Case = [None,None,2,3,4,5,6,7,8,{lambda:0}]
-        Key = int(input("nhap pass : "))
+        Key = int(input("nhap day : "))
 
         switch = {
                     Case[2]: {'monday'},
