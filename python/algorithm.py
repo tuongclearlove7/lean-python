@@ -24,8 +24,8 @@ Mảng des là   : 1 1 1 2 1 2 1
 Đáp án là     : 1 2 3 5 1 2 1
 """
 
-n = int(input())        #Nhập số phần tử mảng
-a = input().split()     #Nhập chuỗi trên một dòng, cắt chuỗi thành mảng
+n = int(input("nhap : "))        #Nhập số phần tử mảng
+a = input("nhap : ").split()     #Nhập chuỗi trên một dòng, cắt chuỗi thành mảng
 
 for i in range(n):      #Chuyển mảng chuỗi thành mảng số
     a[i] = int(a[i])

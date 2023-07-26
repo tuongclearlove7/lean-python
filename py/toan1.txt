@@ -1,0 +1,43 @@
+HÀM SỐ VÀ MÔ HÌNH HÀM SỐ
+
+I Khái niệm hàm số một biến
+1 khái niêm hàm số một biến
+ hàm f là một quy tắc đặt tuong ứng giữa một phần tử của tập X với một và chỉ một phần tử trong tập Y
+ f: x---->Y
+    x ---->f(x)
+khi X và Y là hai tập hợp số thì hàm f được gọi là hàm số
++ tập X được  gọi là txđ của hàm số f
++ f (X) = {(x)|x thuộc X} được gọi là tập giá trị của hàm số f
++ f(x0) được gọi là giá trị của hàm số y =f(x)tại x=x0
+
+tìm tập xác định của hàm số : tìm x sao cho hàm số có nghĩa
+- Nếu hàm số chứa mẫu thì mẫu cho khác 0
+- Nếu hàm số căn bậc chẵn thì cho biểu thức dưới dấu căn > hoặc bằng 0
+1/A có nghĩa khi a khác 0 
+căn A có nghĩa khi A > hoặc bằng 0
+1/ căn A có nghĩa khi A > 0
+ ví dụ : tìm txđ của hàm số sau:
+a/ x=-x mũ 2021 + 2x mũ 4 + 5
+  giải 
+txđ: D=R
+
+b/ y= 1/2x-4 + X + 1
+  giải 
+hàm số xác định khi 2x - 4 khác 0 --> x khác 2
+txđ: D=R\{2}
+
+c/ y= căn 2x-6
+Hàm số xác định khi 2x-6 lớn hơn hoặc bằng 0 --> x lớn hơn hoặc bằng 3
+   giải
+Hàm số xác định khi 2x - 6 --> 0 --> x > hoặc bằng 3
+txđ : D= [3;+ dương vô cùng)	
+
+
+
+
+
+
+
+
+
+
